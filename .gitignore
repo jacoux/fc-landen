@@ -49,5 +49,12 @@ Thumbs.db
 .github/instructions/nx.instructions.md
 .vercel
 
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
 /api/.env
 /api/local-server.js
