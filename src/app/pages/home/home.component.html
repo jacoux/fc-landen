@@ -1,0 +1,203 @@
+
+<!--<ng-container appParallax>-->
+<!--  <div class="relative">-->
+<!--    <img src="https://images.pexels.com/photos/3228766/pexels-photo-3228766.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" class="absolute inset-0 object-cover w-full h-full" alt="" />-->
+<!--    <div class="relative bg-opacity-75 bg-gray-900">-->
+<!--      <svg class="absolute inset-x-0 -bottom-0.5 text-white" viewBox="0 0 1160 163">-->
+<!--        <path-->
+<!--          fill="currentColor"-->
+<!--          d="M-164 13L-104 39.7C-44 66 76 120 196 141C316 162 436 152 556 119.7C676 88 796 34 916 13C1036 -8 1156 2 1216 7.7L1276 13V162.5H1216C1156 162.5 1036 162.5 916 162.5C796 162.5 676 162.5 556 162.5C436 162.5 316 162.5 196 162.5C76 162.5 -44 162.5 -104 162.5H-164V13Z"-->
+<!--        ></path>-->
+<!--      </svg>-->
+<!--      <div class="relative px-4 py-16 mx-auto overflow-hidden sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">-->
+<!--        <div class="flex flex-col items-center justify-between xl:flex-row">-->
+<!--          <div class="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">-->
+<!--            <div class="mb-16 lg:my-40 lg:max-w-lg lg:pl-5 text-right">-->
+<!--              <p class="inline-block py-px text-gray-200 mb-4 text-xs font-semibold tracking-wider  uppercase rounded-full bg-teal-accent-400">-->
+<!--                {{ homePageData().sections.header.subtitle }}-->
+<!--              </p>-->
+<!--              <h2 class="mb-5 text-3xl font-bold tracking-tight text-gray-200 sm:text-4xl sm:leading-none">-->
+<!--                {{homePageData().sections.header.title}}-->
+<!--              </h2>-->
+<!--              <p class="pr-5 mb-5 text-base text-gray-200 md:text-lg">-->
+<!--                {{homePageData().sections.header.description}}-->
+<!--              </p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="w-full max-w-xl xl:px-8 xl:w-5/12">-->
+<!--            <div class="bg-white rounded shadow-2xl p-7 sm:p-10">-->
+<!--              <h3 class="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">-->
+<!--                Start jouw babygokje-->
+
+<!--              </h3>-->
+<!--              <form>-->
+<!--                <div class="mb-1 sm:mb-2">-->
+<!--                  <label for="firstName" class="inline-block mb-1 font-medium">Voornaam</label>-->
+<!--                  <input-->
+<!--                    placeholder="Jan"-->
+<!--                    required=""-->
+<!--                    type="text"-->
+<!--                    class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"-->
+<!--                    id="firstName"-->
+<!--                    name="firstName"-->
+<!--                  />-->
+<!--                </div>-->
+<!--                <div class="mb-1 sm:mb-2">-->
+<!--                  <label for="lastName" class="inline-block mb-1 font-medium">Achternaam</label>-->
+<!--                  <input-->
+<!--                    placeholder="Peeters"-->
+<!--                    required=""-->
+<!--                    type="text"-->
+<!--                    class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"-->
+<!--                    id="lastName"-->
+<!--                    name="lastName"-->
+<!--                  />-->
+<!--                </div>-->
+<!--                <div class="mb-1 sm:mb-2">-->
+<!--                  <label for="email" class="inline-block mb-1 font-medium">E-mailadres</label>-->
+<!--                  <input-->
+<!--                    placeholder="jan.peeters@gmail.com"-->
+<!--                    required=""-->
+<!--                    type="text"-->
+<!--                    class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"-->
+<!--                    id="email"-->
+<!--                    name="email"-->
+<!--                  />-->
+<!--                </div>-->
+<!--                <div class="mt-4 mb-2 sm:mb-4">-->
+<!--                  <button-->
+<!--                    type="submit"-->
+<!--                    class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"-->
+<!--                  >-->
+<!--                    Start gratis-->
+<!--                  </button>-->
+<!--                </div>-->
+<!--                <p class="text-xs text-gray-600 sm:text-sm">-->
+<!--                  Lees <a class="underline" href="/privacy"> hoe </a>  wij omgaan met je gegevens-->
+<!--                </p>-->
+<!--              </form>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Uitgelichte Categorieën &ndash;&gt;-->
+<!--  <section class="py-16 bg-white relative overflow-hidden">-->
+<!--    &lt;!&ndash; Bubbel decoratie &ndash;&gt;-->
+<!--    <div class="absolute rounded-full bg-blue-100 w-64 h-64 -bottom-20 -right-20 opacity-60"></div>-->
+<!--    <div class="absolute rounded-full bg-pink-100 w-40 h-40 top-10 left-10 opacity-60"></div>-->
+
+<!--    <div class="container mx-auto px-4 relative z-10">-->
+<!--      <div class="text-center mb-12">-->
+<!--        <h2 class="text-3xl font-bold mb-4"> {{ homePageData().sections.cta.title }}</h2>-->
+<!--        <p class="text-gray-600 max-w-2xl mx-auto"> {{ homePageData().sections.cta.description }}</p>-->
+<!--      </div>-->
+
+<!--      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">-->
+<!--        &lt;!&ndash; Kaart 1 &ndash;&gt;-->
+<!--        <app-card [description]="homePageData().sections.cta.card[0].description" [title]="homePageData().sections.cta.card[0].title" [link]="homePageData().sections.cta.card[0].link" [linkTitle]="homePageData().sections.cta.card[0].linkTitle"  [color]="'bg-red-50'" />-->
+<!--        <app-card [description]="homePageData().sections.cta.card[1].description" [title]="homePageData().sections.cta.card[1].title" [link]="homePageData().sections.cta.card[1].link" [linkTitle]="homePageData().sections.cta.card[1].linkTitle" [color]="'bg-pink-50'"/>-->
+<!--        <app-card [description]="homePageData().sections.cta.card[2].description" [title]="homePageData().sections.cta.card[2].title" [link]="homePageData().sections.cta.card[2].link" [linkTitle]="homePageData().sections.cta.card[2].linkTitle" [color]="'bg-blue-50'"/>-->
+
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+
+<!--<app-article-latest [articlePaths]="homePageData().sections.blogHeader.articlePaths" [title]="homePageData().sections.blogHeader.title" [description]="homePageData().sections.blogHeader.description"></app-article-latest>-->
+
+<!--  &lt;!&ndash; Nieuwsbrief Sectie met Bubbels &ndash;&gt;-->
+<!--  <section class="py-16 bg-gradient-to-r from-pink-100 to-purple-100 relative overflow-hidden">-->
+<!--    &lt;!&ndash; Bubbels &ndash;&gt;-->
+<!--    <div class="absolute rounded-full bg-white w-24 h-24 top-10 left-10 opacity-40"></div>-->
+<!--    <div class="absolute rounded-full bg-pink-200 w-32 h-32 bottom-10 right-10 opacity-40"></div>-->
+<!--    <div class="absolute rounded-full bg-purple-200 w-16 h-16 top-1/2 left-1/3 opacity-40"></div>-->
+
+<!--    <div class="container mx-auto px-4 relative z-10">-->
+<!--      <div class="max-w-xl mx-auto text-center">-->
+<!--        <h2 class="text-3xl font-bold mb-4">{{ homePageData().sections.newsletter.title }}</h2>-->
+<!--        <p class="text-gray-600 mb-8">{{ homePageData().sections.newsletter.description }}</p>-->
+
+<!--        <form class="flex flex-col sm:flex-row gap-4">-->
+<!--          <input type="email" placeholder="Jouw e-mailadres" class="flex-1 px-4 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-500">-->
+<!--          <button type="submit" class="bg-pink-500 hover:bg-pink-600 text-white font-medium py-3 px-6 rounded-full transition duration-300">{{ homePageData().sections.newsletter.cta }}</button>-->
+<!--        </form>-->
+<!--        <p class="text-xs text-gray-500 mt-4">{{ homePageData().sections.newsletter.privacy }}.</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+
+<!--  &lt;!&ndash; Footer &ndash;&gt;-->
+<!--</ng-container>-->
+
+
+<header class="bg-gradient-to-bl from-red-900 to-zinc-900">
+  <!-- Container -->
+  <div class="mx-auto overflow-hidden px-5 py-10 md:px-10 lg:px-20 lg:py-20 ">
+    <!-- Component -->
+    <div class="flex flex-col items-center gap-y-16 py-10 sm:gap-y-20 lg:py-20">
+      <!-- Hero Title -->
+      <div class="max-w-3xl">
+        <h1 class="m-5 text-center text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl text-white">FC Landen.</h1>
+        <p class="mx-auto mb-6 text-center text-sm  sm:px-8 sm:text-xl md:px-24 lg:mb-8 text-white">1e provinciale. Meer dan 15 jeugdploegen in interprovenciale en gewestelijke afdelingen. Sluit je aan vanaf 5jaar</p>
+        <!-- Hero Button -->
+        <div class="mx-auto flex w-36 flex-col justify-center gap-x-5 gap-y-5 sm:w-full sm:flex-row sm:items-start">
+          <a href="javascript:void(0);" class="inline-block items-center rounded-md border border-solid border-black bg-white px-6 py-3 text-center font-semibold text-red-900">Eerste ploeg</a>
+          <a href="javascript:void(0);" class="flex items-center gap-2 rounded-md border border-solid border-black bg-white px-6 py-3 text-center font-semibold text-black">
+            <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/64aa5ac1b81f4f0a9b8f0986_play-icon.svg" alt="" class="inline-block h-4 w-4" />
+            <p>Jeugd</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Slider -->
+  <div class="flex min-w-[100vw] gap-6 overflow-hidden sm:gap-7 py-5">
+    <img src="https://scontent-bru2-1.xx.fbcdn.net/v/t39.30808-6/492910048_1273143658153090_7080905859673770681_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=LcwGFxspN7sQ7kNvwHEE_mG&_nc_oc=Adk_3l0xnEuXcxxDOamVv29TxgjgZW5IT7QF_hBNR1lDilGgXCVxbbi8eKYw_MACLiI&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&_nc_gid=FF2uvnK5Mb1u7uUWstMjrQ&oh=00_AfUb_1XsjHpq2wJ6i-NS4BouJuXFM6QeTer5nmv3BYl4zQ&oe=68B37A05" alt="" class="h-auto w-36 rounded-2xl sm:w-72 lg:w-80" />
+    <img src="https://scontent-bru2-1.xx.fbcdn.net/v/t39.30808-6/535498647_1375142651286523_3278718114278196820_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=aoRNpMoyyP4Q7kNvwFMYtmu&_nc_oc=Adk0Ynsht3cswTbEVnUN2Ttj4ZaM-M4saPkQkQMnJu4-yC5Nr5ghpuZ1hrfWDL102y0&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&_nc_gid=qYn6v2QLErSpuv1VcPgAlg&oh=00_AfXhLQX3mBM5wVyjnrzzjdSlAMb2TJAR60DmtpOShorabQ&oe=68B359E1" alt="" class="h-auto w-36 rounded-2xl sm:w-72 lg:w-80" />
+    <img src="https://scontent-bru2-1.xx.fbcdn.net/v/t39.30808-6/533954059_1369581988509256_5492714885984023353_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=YjSGPesaGJ0Q7kNvwEwB0Du&_nc_oc=AdmGBDaL3GdXm1rmKYtF7maq_vjdTAyAZZMP2_7j7HfqsD0Qx8xq54Xt8hjBnC9pxkw&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&_nc_gid=-cRre1q2JiLzD_PL8SFhjQ&oh=00_AfWcqhCZJbrbXTrAotHiU25x-6XrxF6YDzrSXr6dAtL-Uw&oe=68B363A4" alt="" class="h-auto w-36 rounded-2xl sm:w-72 lg:w-80" />
+    <img src="https://scontent-bru2-1.xx.fbcdn.net/v/t39.30808-6/518255466_1357261953074593_5618272654627847583_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=hBaX0K-jB_gQ7kNvwF2yXse&_nc_oc=AdkhnWinEHZST_lV7YgyfvJB8NbLNLTdCxYRQqFgcyE306xuCNPw818cIPdZZx1Bz7I&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&_nc_gid=X_11NDHk5EufJi8CDvR17Q&oh=00_AfVeKkXR54Fs6YzTL2mpOXwwYYxbDw1i_8yJZZqVVFLbbg&oe=68B367EB" alt="" class="h-auto w-36 rounded-2xl sm:w-72 lg:w-80" />
+    <img src="https://scontent-bru2-1.xx.fbcdn.net/v/t39.30808-6/495603495_1298630022271120_2258367066725795414_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=1oCTfngOCr8Q7kNvwH8cCFq&_nc_oc=AdmTfoDLkJlThN79xvWVHLZqxidPHI5NjBlKHFWlZNS8bNjMFBhcCzMqqXX_D5MA2YM&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&_nc_gid=-DYSNNwFLiptwjid_F-pnA&oh=00_AfWz90pIqqNpEyUewiDF4vFLKiCs-PpjmMwVj63eorPEXA&oe=68B372C6" alt="" class="h-auto w-36 rounded-2xl sm:w-72 lg:w-80" />
+    <img src="https://scontent-bru2-1.xx.fbcdn.net/v/t39.30808-6/499770331_1298630095604446_1533311866426185015_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=jZXI2Evpij8Q7kNvwEa_XUx&_nc_oc=Adl2r9KJNSInX6axOHP2l7po1dhSkdmX4-VB--EZ2EYmTWmkO0FfnC5pW4YVVOLyVrw&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&_nc_gid=RnDDZgcD-3NlyN0Uol-EWg&oh=00_AfXgxi5c_OvkZwBTVldj_Un9X5Rmvj67GlK94C_7FgbFBQ&oe=68B373AD" alt="" class="h-auto w-36 rounded-2xl sm:w-72 lg:w-80" />
+  </div>
+</header>
+
+<app-article-latest [articlePaths]="homePageData().sections.blogHeader.articlePaths" [title]="homePageData().sections.blogHeader.title" [description]="homePageData().sections.blogHeader.description"></app-article-latest>
+<app-features />
+<app-article-latest [articlePaths]="homePageData().sections.events.articlePaths" [title]="homePageData().sections.events.title" [description]="homePageData().sections.events.description"></app-article-latest>
+
+<section>
+  <!-- Container -->
+  <div class="mx-auto w-full max-w-7xl px-5 py-16 sm:px-8 md:px-10 md:py-18 lg:px-12 lg:py-20">
+    <!-- Component -->
+    <div class="flex flex-col md:flex-row items-center gap-10 md:gap-14 lg:gap-16 bg-gray-100 p-8 sm:p-10 md:p-12">
+      <!-- Image -->
+      <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/s4a0358ed7d8ec4b6/image/i983729d2cc0ad2a3/version/1735405492/image.jpg" alt="" class="inline-block h-72 w-72 object-cover" />
+      <div class="max-w-2xl flex-1">
+        <!-- Title -->
+        <h2 class="mb-4 text-3xl font-bold md:text-5xl">
+          Rust zacht voorzitter
+        </h2>
+        <p class="mb-6 text-sm text-gray-500 sm:text-base md:mb-10 lg:mb-12">
+          De hele club, haar bestuursleden en medewerkers zijn verbijsterd en diep ontzet.
+          Gisteren bereikte ons het trieste bericht dat onze voorzitter Tony Thierie totaal onverwacht is overleden.
+          Tony was 29 jaar lang een gedreven en gepassioneerde voorzitter van onze club, zijn overlijden is dan ook een ontzettend groot verlies voor de club. We zijn Tony dankbaar voor alles wat hij voor FC Landen heeft betekend.
+          Iedereen die wil heeft de mogelijkheid om donderdag 2 januari 2025 te verzamelen op het C-veld om 18u30 om vanuit daar in groep zich naar het funerarium Onckelinx te begeven voor een kruisje te geven.
+          We wensen zijn kinderen, kleinkinderen, familieleden en vrienden heel veel sterkte om dit onverwachte verlies te kunnen verwerken.
+
+          Het bestuur van Fc Landen
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-logos />
+<div *appEditor>
+  <app-sidebar-editor
+    [block]="homePageData()"
+    (updateBlock)="onBlockUpdate($event)"
+    (blockSave)="onBlockSave($event)"
+  />
+</div>

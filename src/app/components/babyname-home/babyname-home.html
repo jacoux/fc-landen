@@ -1,0 +1,45 @@
+<div class="bg-white p-4 shadow-md rounded">
+    <h3 class="text-2xl font-bold mb-4">Geef de naam en leeftijd van je kinderen in voor een gepersonaliseerde ervaring op deze site</h3>
+    <div class="flex gap-4 mb-4">
+        <input
+            type="text"
+            placeholder="Naam"
+            [(ngModel)]="newName"
+            class="border px-4 py-2 w-full rounded"
+        />
+        <input
+            type="number"
+            placeholder="Leeftijd"
+            [(ngModel)]="newAge"
+            class="border px-4 py-2 w-full rounded"
+        />
+        <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            (click)="addPerson()"
+        >Voeg toe</button>
+    </div>
+
+    <h3 class="text-2xl font-bold mb-4">Werk bij</h3>
+    <div class="space-y-4">
+        @for (person of people(); track person; let i = $index) {
+            <div class="flex gap-4">
+                <input
+                    type="text"
+                    [value]="person.name"
+                    (input)="updateName(i, $event)"
+                    class="border px-4 py-2 w-full rounded"
+                />
+                <input
+                    type="number"
+                    [value]="person.age"
+                    (input)="updateAge(i, $event)"
+                    class="border px-4 py-2 w-full rounded"
+                />
+                <button
+                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                    (click)="removePerson(i)"
+                >Verwijder</button>
+            </div>
+        }
+    </div>
+</div>

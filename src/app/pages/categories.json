@@ -1,0 +1,34 @@
+{
+  "categories": [
+    {
+      "id": "jeugdvoetbal",
+      "name": "jeugdvoetbal",
+      "displayName": "Jeugdvoetbal"
+    },
+    {
+      "id": "clubinfo",
+      "name": "clubinfo",
+      "displayName": "Club Info"
+    },
+    {
+      "id": "lid-worden",
+      "name": "lid-worden",
+      "displayName": "Lid worden"
+    },
+    {
+      "id": "ledeninfo",
+      "name": "ledeninfo",
+      "displayName": "Leden Info"
+    },
+    {
+      "id": "algemeen",
+      "name": "algemeen",
+      "displayName": "Algemeen"
+    },
+    {
+      "id": "Drafts",
+      "name": "Drafts",
+      "displayName": "Drafts"
+    }
+  ]
+}

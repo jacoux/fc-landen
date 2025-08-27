@@ -1,0 +1,20 @@
+<div class="fixed right-0 top-0 h-full w-[800px] bg-white shadow-xl z-50 p-4 overflow-y-auto border-l border-gray-200">
+  <h2 class="text-xl font-bold mb-4">Pagina bewerken</h2>
+
+
+<div class="w-full h-screen flex flex-col bg-gray-50">
+  <div class="p-4 border-b bg-white flex justify-between items-center">
+    <h1 class="text-xl font-semibold">Artikel bewerken</h1>
+    <input type="text" class="w-full mb-4 p-2 border border-gray-300 rounded" placeholder="assets/blog/nieuw.md" [ngModel]="articlePath()" (ngModelChange)="newPath.set($event)" />
+
+    <button
+      class="bg-blue-600 text-white px-4 py-2 rounded"
+      (click)="saveToGithub()"
+    >
+      Opslaan
+    </button>
+  </div>
+
+  <div #editorRoot class="flex-1 overflow-auto p-4 bg-white"></div>
+</div>
+</div>

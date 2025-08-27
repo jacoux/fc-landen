@@ -1,0 +1,57 @@
+{
+  "sections": {
+    "header": {
+      "subtitle": "Voetbal verbindt ons",
+      "title": "FC Landen",
+      "description": "FC Landen is een voetbalclub uit Landen die zich richt op kwaliteitsvolle jeugdopleiding en het promoten van voetbal als verbindende kracht in onze gemeenschap. Ontdek onze visie, teams en evenementen."
+    },
+    "cta": {
+      "title": "Ontdek FC Landen",
+      "description": "Alles wat je moet weten over onze club, teams en activiteiten.",
+      "card": [
+        {
+          "title": "Clubinfo",
+          "description": "Leer meer over onze club, visie en infrastructuur.",
+          "link": "/clubinfo",
+          "linkTitle": "Ontdek meer"
+        },
+        {
+          "title": "Jeugdvoetbal",
+          "description": "Informatie over onze jeugdteams en opleidingsfilosofie.",
+          "link": "/jeugdvoetbal",
+          "linkTitle": "Jeugd info"
+        },
+        {
+          "title": "Lid worden",
+          "description": "Word lid van FC Landen en sluit je aan bij onze voetbalfamilie.",
+          "link": "/lid-worden",
+          "linkTitle": "Word lid"
+        }
+      ]
+    },
+    "blogHeader": {
+      "title": "Laatste Nieuws",
+      "description": "Blijf op de hoogte van het laatste nieuws van FC Landen.",
+      "articlePaths": [
+        "assets/blog/algemeen/sponsordag-2025.md",
+        "assets/blog/jeugdvoetbal/ploegvoorstelling-jeugd-2024-2025.md",
+        "assets/blog/algemeen/fc-landen-kampioen-2a.md"
+      ]
+    },
+    "events": {
+      "title": "Onze evenementen",
+      "description": "Onze aankomende evenementen",
+      "articlePaths": [
+        "assets/blog/algemeen/sponsordag-2025.md",
+        "assets/blog/jeugdvoetbal/ploegvoorstelling-jeugd-2024-2025.md",
+        "assets/blog/algemeen/fc-landen-kampioen-2a.md"
+      ]
+    },
+    "newsletter": {
+      "title": "Nieuwsbrief",
+      "description": "Blijf op de hoogte van het laatste nieuws van FC Landen.",
+      "cta": "Abonneer",
+      "privacy": "We respecteren je privacy en sturen geen spam."
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<div class="max-w-[1030px] mx-auto px-4 sm:px-8 xl:px-0">
+  <app-blog-header [title]="title()" [date]="date()" [author]="author()" [excerpt]="excerpt()" ></app-blog-header>
+  @if (!newContent().trim()) {
+   <div  class="article-content p-8 markdown-content" appMarkdownDirective>
+            <markdown [data]="content()"></markdown>
+   </div>
+  }
+  <div *articleEditor class="article-content p-8 markdown-content max-w-2xl mx-auto" appMarkdownDirective>
+    <markdown [data]="newContent()"></markdown>
+   </div>
+
+  <div *articleEditor>
+
+    <app-article-editor
+      [articlePath]="this.markdownPath()"
+      (markdownContent)="onBlockUpdate($event)"
+    />
+  </div>
+</div>

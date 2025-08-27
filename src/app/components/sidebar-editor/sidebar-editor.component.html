@@ -1,0 +1,117 @@
+<div class="fixed right-0 top-0 h-full w-[400px] bg-white shadow-xl z-50 p-4 overflow-y-auto border-l border-gray-200">
+  <h2 class="text-xl font-bold mb-4">Pagina bewerken</h2>
+  <div class="" (click)="close()">
+    X
+  </div>
+
+@if (block()) {
+  <div  class="mb-6">
+    <h3 class="font-semibold text-sm uppercase mb-2 text-gray-600">Header</h3>
+    <input
+      class="w-full border px-3 py-2 rounded mb-2"
+      [ngModel]="block().sections.header.subtitle"
+      (ngModelChange)="updateBlockFn($event, 'subtitle')"
+      placeholder="Subtitel"
+    />
+    <input
+      class="w-full border px-3 py-2 rounded mb-2"
+      [ngModel]="block().sections.header.title"
+      (ngModelChange)="updateBlockFn($event, 'title')"
+      placeholder="Titel"
+    />
+    <textarea
+      class="w-full border px-3 py-2 rounded"
+      [ngModel]="block().sections.header.description"
+      (ngModelChange)="updateBlockFn($event, 'description')"
+      placeholder="Tekst"
+    ></textarea>
+  </div>
+  <div  class="mb-6">
+    <h3 class="font-semibold text-sm uppercase mb-2 text-gray-600">cta</h3>
+    <input
+      class="w-full border px-3 py-2 rounded mb-2"
+      [ngModel]="block().sections.cta.title"
+      (ngModelChange)="updateBlockFn($event, 'ctaTitle')"
+      placeholder="Subtitel"
+    />
+    <input
+      class="w-full border px-3 py-2 rounded mb-2"
+      [ngModel]="block().sections.cta.description"
+      (ngModelChange)="updateBlockFn($event, 'ctaDescription')"
+      placeholder="Titel"
+    />
+  </div>
+  <div  class="mb-6">
+    <h3 class="font-semibold text-sm uppercase mb-2 text-gray-600">Blog Header</h3>
+    <input
+      class="w-full border px-3 py-2 rounded mb-2"
+      [ngModel]="block().sections.blogHeader.title"
+      (ngModelChange)="updateBlockFn($event, 'blogHeaderTitle')"
+      placeholder="Titel"
+    />
+    <textarea
+      class="w-full border px-3 py-2 rounded"
+      [ngModel]="block().sections.blogHeader.description"
+      (ngModelChange)="updateBlockFn($event, 'blogHeaderDescription')"
+      placeholder="Tekst"
+    ></textarea>
+    <textarea
+      class="w-full border px-3 py-2 rounded"
+      [ngModel]="block().sections.blogHeader.articlePaths"
+      (ngModelChange)="updateBlockFn($event, 'blogHeaderArticlePaths')"
+      placeholder="Tekst"
+    ></textarea>
+  </div>
+  <div  class="mb-6">
+    <h3 class="font-semibold text-sm uppercase mb-2 text-gray-600">events</h3>
+    <input
+      class="w-full border px-3 py-2 rounded mb-2"
+      [ngModel]="block().sections.events.title"
+      (ngModelChange)="updateBlockFn($event, 'eventHeaderTitle')"
+      placeholder="Titel"
+    />
+    <textarea
+      class="w-full border px-3 py-2 rounded"
+      [ngModel]="block().sections.events.description"
+      (ngModelChange)="updateBlockFn($event, 'eventHeaderDescription')"
+      placeholder="Tekst"
+    ></textarea>
+    <textarea
+      class="w-full border px-3 py-2 rounded"
+      [ngModel]="block().sections.events.articlePaths"
+      (ngModelChange)="updateBlockFn($event, 'eventHeaderArticlePaths')"
+      placeholder="Tekst"
+    ></textarea>
+  </div>
+  <div  class="mb-6">
+    <h3 class="font-semibold text-sm uppercase mb-2 text-gray-600">cta</h3>
+    <input
+      class="w-full border px-3 py-2 rounded mb-2"
+      [ngModel]="block().sections.newsletter.title"
+      (ngModelChange)="updateBlockFn($event, 'newsletterTitle')"
+      placeholder="Titel"
+    />
+    <textarea
+      class="w-full border px-3 py-2 rounded"
+      [ngModel]="block().sections.newsletter.description"
+      (ngModelChange)="updateBlockFn($event, 'newsletterDescription')"
+      placeholder="Tekst"
+    ></textarea>
+    <textarea
+      class="w-full border px-3 py-2 rounded mb-2"
+      [ngModel]="block().sections.newsletter.cta"
+      (ngModelChange)="updateBlockFn($event, 'newsletterCta')"
+      placeholder="Tekst"
+    ></textarea>
+    <textarea
+      class="w-full border px-3 py-2 rounded mb-2"
+      [ngModel]="block().sections.newsletter.privacy"
+      (ngModelChange)="updateBlockFn($event, 'newsletterPrivacy')"
+      placeholder="Tekst"
+    ></textarea>
+  </div>
+  <button
+    class="bg-green-900 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+    (click)="this.blockSave.emit(newData())"> Opslaan</button>
+}
+</div>
