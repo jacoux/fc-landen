@@ -6,7 +6,7 @@ export class SaveToGithubService {
   constructor(private readonly http: HttpClient) {}
 
   saveFile(filePath: string, content: string, sha: string | null = null) {
-    return this.http.post('https://www.babydrukte.be/api/save-to-github', {
+    return this.http.post('https://fc-landen.vercel.app/api/save-to-github', {
       filePath,
       content
     });
@@ -15,12 +15,12 @@ export class SaveToGithubService {
   uploadImage(file: File) {
     const formData = new FormData();
     formData.append('image', file);
-    
-    return this.http.post<{success: number, file: {url: string, name: string, size: number}}>('https://www.babydrukte.be/api/upload-image', formData);
+
+    return this.http.post<{success: number, file: {url: string, name: string, size: number}}>('https://fc-landen.vercel.app/api/upload-image', formData);
   }
 
   deleteFile(filePath: string) {
-    return this.http.delete('https://www.babydrukte.be/api/save-to-github', {
+    return this.http.delete('https://fc-landen.vercel.app/api/save-to-github', {
       body: { filePath }
     });
   }
