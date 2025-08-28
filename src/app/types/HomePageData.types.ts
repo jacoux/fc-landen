@@ -1,4 +1,3 @@
-import {SlideImage} from '../components/image-slider/image-slider.component';
 
 export interface CardData {
   title: string;
@@ -30,7 +29,7 @@ export interface HomePageData {
     slider: {
       title: string;
       description: string;
-      images: SlideImage[];
+      images: string[];
     };
     blogHeader: {
       title: string;

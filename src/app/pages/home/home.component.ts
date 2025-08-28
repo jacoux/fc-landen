@@ -8,14 +8,13 @@ import {HomePageData} from '../../types/HomePageData.types';
 import { ArticleLatestComponent } from '../../components/article-latest/article-latest.component';
 import {FeaturesComponent} from '../../components/features/features.component';
 import {LogosComponent} from '../../components/logos/logos.component';
-import {ImageSliderComponent} from '../../components/image-slider/image-slider.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  imports: [SidebarEditorComponent, EditorDirective, ImageSliderComponent, ArticleLatestComponent, FeaturesComponent, LogosComponent, ImageSliderComponent],
+  imports: [SidebarEditorComponent, EditorDirective, ArticleLatestComponent, FeaturesComponent, LogosComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
