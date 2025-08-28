@@ -1,7 +1,8 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import {Component, OnInit, AfterViewInit, inject, PLATFORM_ID} from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
 import { BabynameHomeComponent } from "./components/babyname-home/babyname-home.component";
 import { DisplayNameComponent } from "./components/display-name/display-name.component";
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,9 @@ import { DisplayNameComponent } from "./components/display-name/display-name.com
 })
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'FC Landen';
+  private readonly platformId = inject(PLATFORM_ID);
 
   ngOnInit(): void {
-    // Component initialization
   }
 
   ngAfterViewInit(): void {
@@ -22,6 +23,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   private initializeMobileMenu(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -38,11 +43,15 @@ export class AppComponent implements OnInit, AfterViewInit {
         }
       });
     }
+
   }
 
   private initializeMobileDropdowns(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
     const dropdowns = document.querySelectorAll('.mobile-dropdown');
-    
+
     dropdowns.forEach((dropdown) => {
       const btn = dropdown.querySelector('.mobile-dropdown-btn') as HTMLElement;
       const content = dropdown.querySelector('.mobile-dropdown-content') as HTMLElement;
@@ -51,7 +60,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       if (btn && content && icon) {
         btn.addEventListener('click', (event) => {
           event.preventDefault();
-          
+
           // Close all other dropdowns
           dropdowns.forEach((otherDropdown) => {
             if (otherDropdown !== dropdown) {
