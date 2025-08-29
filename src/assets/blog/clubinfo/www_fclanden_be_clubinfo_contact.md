@@ -1,10 +1,10 @@
 ---
-title: Bestuur - FC Landen
+title: Contact
 author: FC Landen
 date: 27-08-2025
 image: /assets/images/ifa66e23c8e19fe48.png
 slug: /clubinfo/bestuur
-excerpt: Overzicht van het bestuur.
+excerpt: Overzicht van het bestuur en hoe ons te contacteren.
 tags:
 - infrastructuur
 - faciliteiten
@@ -14,38 +14,70 @@ tags:
 
 # Bestuur
 
-Voorzitter: Bart Freson - 0476 44 78 47 - bartf2306@gmail.com&nbsp;
+|  |  |  |  |
 
-Secretaris - G.C.&nbsp;
+| --- | --- | --- | --- |
 
-Penningmeester: Ludo Gielen&nbsp;
+| Voorzitter | Bart Freson | 0476 44 78 47 | bartf2306@gmail.com |
 
-Lid: Frank Mathijs
+| Secretaris - G.C. |  |  |  |
 
-Lid: Branco Lacroix&nbsp;
+| Penningmeester | Ludo Gielen |  |  |
 
-Lid: Marleen Aerts&nbsp;
+| Lid | Frank Mathijs |  |  |
+
+| Lid | Branco Lacroix |  |  |
+
+| Lid | Marleen Aerts |  |  |
 
 # Sportief
 
-TVJO: Rob EVERS - 0495 76 17 21 - rob.evers@telenet.be&nbsp;
+|  |  |  |  |
+
+| --- | --- | --- | --- |
+
+| TVJO | Rob EVERS | 0495 76 17 21 | rob.evers@telenet.be |
 
 # Kledij
 
-Frank MATHIJS: 0475 92 41 86 - frank.mathijs@telenet.be&nbsp;
+|  |  |  |
 
-Marleen Aerts&nbsp;
+| --- | --- | --- |
+
+| Frank MATHIJS | 0475 92 41 86 | frank.mathijs@telenet.be |
+
+| Marleen Aerts |  |  |
 
 # Wedstrijdplanning &amp; PSD
 
-Kenneth Vanmarsnille:&nbsp; 0473 56 64 16 - kenneth.vanmarsnille@hotmail.com&nbsp;
+|  |  |  |
+
+| --- | --- | --- |
+
+| Kenneth Vanmarsnille | 0473 56 64 16 | kenneth.vanmarsnille@hotmail.com |
 
 # Tornooien
 
-Branco Lacroix: 0497 35 84 34 -tornooi@fclanden.be&nbsp;
+|  |  |  |
+
+| --- | --- | --- |
+
+| Branco Lacroix | 0[497 35 84 34](tel:32497358434) | tornooi@fclanden.be |
 
 # Jeugdscheidsrechters
 
-Referee Ambassador: Guy BARTHOLOMÉ - 0485 74 36 44 - guy.bartholome@hotmail.com&nbsp;
+|  |  |  |  |
+
+| --- | --- | --- | --- |
+
+| Referee Ambassador | Guy BARTHOLOMÉ | 0485 74 36 44 | guy.bartholome@hotmail.com |
+
+|  |  |  |  |
+
+---
+
+---
+
+---
 
 ---
