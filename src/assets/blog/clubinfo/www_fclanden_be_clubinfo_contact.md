@@ -14,10 +14,6 @@ tags:
 
 # Bestuur
 
-|  |  |  |  |
-
-| --- | --- | --- | --- |
-
 | Voorzitter | Bart Freson | 0476 44 78 47 | bartf2306@gmail.com |
 
 | Secretaris - G.C. |  |  |  |
@@ -32,17 +28,9 @@ tags:
 
 # Sportief
 
-|  |  |  |  |
-
-| --- | --- | --- | --- |
-
 | TVJO | Rob EVERS | 0495 76 17 21 | rob.evers@telenet.be |
 
 # Kledij
-
-|  |  |  |
-
-| --- | --- | --- |
 
 | Frank MATHIJS | 0475 92 41 86 | frank.mathijs@telenet.be |
 
