@@ -1,29 +1,36 @@
-# Clubgegevens - FC Landen
-
-Bron: https://www.fclanden.be/clubinfo/clubgegevens
+---
+title: Clubgegevens
+author: FC Landen
+date: 29-08-2025
+image: 
+slug: /clubinfo/clubgegevens
+excerpt: clubgegevens
+---
 
 # Clubgegevens
 
-* Naam: FC Landen
-* Statuut: v.z.w.
-* Stichtingsjaar: 1940
-* Stamnummer: 2941
+* Naam:&nbsp;FC Landen
+
+* Statuut:&nbsp;v.z.w.
+
+* Stichtingsjaar:&nbsp;1940
+
+* Stamnummer:&nbsp;2941
+
 * IBAN: BE42 1030 1326 8254
+
 * BTW: BE 0411.636.722
-* Clubkleuren: zwart / rood / zwart
-* Adres: Sportlaan 30, 3400 Landen
-* Telefoon: 011 88 31 11
 
----
+* Clubkleuren:&nbsp;zwart / rood / zwart
 
+* Adres:&nbsp;Sportlaan 30, 3400 Landen
 
-
----
+* Telefoon:&nbsp;011 88 31 11
 
 ---
 
 ---
 
+---
 
-
-
+---
