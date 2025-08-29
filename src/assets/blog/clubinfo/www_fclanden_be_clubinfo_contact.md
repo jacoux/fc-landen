@@ -38,34 +38,14 @@ tags:
 
 # Wedstrijdplanning &amp; PSD
 
-|  |  |  |
-
-| --- | --- | --- |
-
 | Kenneth Vanmarsnille | 0473 56 64 16 | kenneth.vanmarsnille@hotmail.com |
 
 # Tornooien
-
-|  |  |  |
-
-| --- | --- | --- |
 
 | Branco Lacroix | 0[497 35 84 34](tel:32497358434) | tornooi@fclanden.be |
 
 # Jeugdscheidsrechters
 
-|  |  |  |  |
-
-| --- | --- | --- | --- |
-
 | Referee Ambassador | Guy BARTHOLOMÉ | 0485 74 36 44 | guy.bartholome@hotmail.com |
-
-|  |  |  |  |
-
----
-
----
-
----
 
 ---
