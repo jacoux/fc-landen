@@ -6,17 +6,10 @@ image: /assets/images/ia8f048ca2a878e51.png
 slug: /jeugdvoetbal
 excerpt: Jeugdvoetbal bij FC Landen met spelregels, trainingen en informatie voor alle jeugdcategorieën.
 tags:
-  - jeugdvoetbal
-  - spelregels
-  - training
-  - jeugd
-sections:
-  - Spelregels Jeugdvoetbal
-  - 2V2 Spelreglement
-  - 3V3 Spelreglement
-  - 5V5 Spelreglement
-  - 8V8 Spelreglement
-  - 11V11 Spelreglement
+- jeugdvoetbal
+- spelregels
+- training
+- jeugd
 ---
 
 # Spelregels jeugdvoetbal
@@ -41,7 +34,4 @@ sections:
 
 ---
 
-
-
-
-
+![Image](https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/icffd1b2279c6d3018876249f08f28752.png)
