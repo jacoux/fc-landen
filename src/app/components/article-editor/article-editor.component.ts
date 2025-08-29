@@ -4,6 +4,7 @@ import {isPlatformBrowser} from '@angular/common';
 import {SaveToGithubService} from '../../services/saveToGithub';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {Router} from '@angular/router';
+import {SliderTool} from './slider-tool';
 
 @Component({
   selector: 'app-article-editor',
@@ -73,6 +74,16 @@ export class ArticleEditorComponent implements OnInit {
               }
             }
           }
+        },
+        slider: {
+          class: SliderTool,
+          config: {
+            uploader: {
+              uploadByFile: (file: File) => {
+                return this.uploadImageFile(file);
+              }
+            }
+          }
         }
       },
       onChange: async () => {
@@ -90,7 +101,8 @@ export class ArticleEditorComponent implements OnInit {
         },
         error: (error) => {
           console.error('Image upload failed:', error);
-          reject(new Error('Failed to upload image'));
+          console.error('Full error details:', JSON.stringify(error, null, 2));
+          reject(error);
         }
       });
     });
@@ -222,6 +234,8 @@ export class ArticleEditorComponent implements OnInit {
         } else if (block.type === 'image') {
           const caption = block.data.caption ? ` "${block.data.caption}"` : '';
           return `![${block.data.caption || 'Image'}](${block.data.file.url}${caption})`;
+        } else if (block.type === 'slider') {
+          return this.convertSliderToMarkdown(block.data);
         }
         return '';
       })
@@ -251,6 +265,22 @@ export class ArticleEditorComponent implements OnInit {
     const current = this.frontmatter();
     const newTags = current.tags.filter((_, i) => i !== index);
     this.frontmatter.set({ ...current, tags: newTags });
+  }
+
+  convertSliderToMarkdown(sliderData: any): string {
+    const images = sliderData.images.map((img: any) => 
+      `  - url: ${img.url}${img.caption ? `\n    caption: ${img.caption}` : ''}`
+    ).join('\n');
+
+    return `<slider
+  autoplay="${sliderData.autoplay}"
+  interval="${sliderData.interval}"
+  showDots="${sliderData.showDots}"
+  showArrows="${sliderData.showArrows}"
+  ${sliderData.caption ? `caption="${sliderData.caption}"` : ''}
+>
+${images}
+</slider>`;
   }
 
   close() {
