@@ -12,9 +12,7 @@ tags:
 - accommodatie
 ---
 
-# Infrastructuur&nbsp;
-
-## Sportstadion Landen
+# Infrastructuur: Sportstadion Landen
 
 * Wedstrijden en trainingen
 
