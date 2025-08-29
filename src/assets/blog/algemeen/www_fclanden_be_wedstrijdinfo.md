@@ -1,7 +1,3 @@
-# Wedstrijdinfo - FC Landen
-
-Bron: https://www.fclanden.be/wedstrijdinfo
-
 # Wedstrijdinfo
 
 [Wedstrijdblad](https://www.wedstrijdbladen.be/astm/)
