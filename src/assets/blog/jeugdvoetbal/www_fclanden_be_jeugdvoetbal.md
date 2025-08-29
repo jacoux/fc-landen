@@ -33,5 +33,3 @@ tags:
 11V11 [Download](assets/documents/11V11_Spelreglement_jeugdvoetbal_2023_poster_individueel.pdf)
 
 ---
-
-![Image](https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/icffd1b2279c6d3018876249f08f28752.png)
