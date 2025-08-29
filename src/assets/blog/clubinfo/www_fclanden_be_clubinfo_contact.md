@@ -3,7 +3,7 @@ title: Contact
 author: FC Landen
 date: 27-08-2025
 image: /assets/images/ifa66e23c8e19fe48.png
-slug: /clubinfo/bestuur
+slug: /clubinfo/contact
 excerpt: Overzicht van het bestuur en hoe ons te contacteren.
 tags:
 - infrastructuur
