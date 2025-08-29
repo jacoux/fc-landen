@@ -1,7 +1,7 @@
 ---
 title: Parkeren
-author: 
-date: 29/08/2025
+author: FC Landen
+date: 29-08-2025
 image: 
 slug: /clubinfo/route
 excerpt: Info over parkeren aan FC Landen
