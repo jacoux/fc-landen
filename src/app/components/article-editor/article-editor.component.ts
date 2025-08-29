@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import {isPlatformBrowser} from '@angular/common';
 import {SaveToGithubService} from '../../services/saveToGithub';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-article-editor',
@@ -21,6 +22,7 @@ export class ArticleEditorComponent implements OnInit {
   editor: any;
   markdownContent = output<string>();
   readonly #githubSave = inject(SaveToGithubService);
+  readonly #router = inject(Router);
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
@@ -47,9 +49,9 @@ export class ArticleEditorComponent implements OnInit {
     this.editor = new EditorJS({
       holder: this.editorRoot.nativeElement,
       data: blockData,
-      tools: { 
-        header: Header, 
-        paragraph: Paragraph, 
+      tools: {
+        header: Header,
+        paragraph: Paragraph,
         image: {
           class: Image,
           config: {
@@ -115,13 +117,19 @@ export class ArticleEditorComponent implements OnInit {
       .join('\n\n');
   }
 
+  close() {
+    this.#router.navigate([], {
+      queryParams: { editor: null }
+    });
+  }
+
   async saveToGithub() {
     const saved = await this.editor.save();
     const mdx = this.convertToMDX(saved);
 
-    const path = this.newPath ?? this.articlePath();
+    const path = this.newPath() || this.articlePath();
 
-    this.#githubSave.saveFile(path(), mdx, null ).subscribe({
+    this.#githubSave.saveFile(path, mdx, null ).subscribe({
       next: () => console.log('✅ File saved'),
       error: (err) => console.error('❌ Save failed', err),
     });
