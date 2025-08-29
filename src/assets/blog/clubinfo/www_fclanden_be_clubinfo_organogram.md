@@ -1,5 +1,5 @@
 ---
-title: Organogram 
+title: Organogram 2024-2025
 author: FC Landen
 date: 27-08-2025
 image: /assets/images/i692586aefce4df05.jpg
@@ -13,6 +13,6 @@ tags:
 
 # Organogram 2024-2025
 
-[Download](assets/documents/Fc_Landen_Organogram-1.pdf)
+[Download het organogram](assets/documents/Fc_Landen_Organogram-1.pdf)
 
 ---
