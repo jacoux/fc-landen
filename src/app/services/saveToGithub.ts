@@ -15,7 +15,6 @@ export class SaveToGithubService {
   uploadImage(file: File) {
     const formData = new FormData();
     formData.append('image', file);
-
     return this.http.post<{success: number, file: {url: string, name: string, size: number}}>('https://fc-landen.vercel.app/api/upload-image', formData);
   }
 

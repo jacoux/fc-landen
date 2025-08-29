@@ -1,6 +1,6 @@
 // api/save-to-github.js
 export default async function handler(req, res) {
-  const allowedOrigins = ['https://fclanden.be', 'http://localhost:4200'];
+  const allowedOrigins = ['https://fclanden.be', 'https://fc-landen.vercel.app/', 'http://localhost:4200'];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
     res.setHeader('Access-Control-Allow-Origin', origin);
