@@ -21,6 +21,18 @@ export class ArticleEditorComponent implements OnInit {
   newPath = signal('');
   editor: any;
   markdownContent = output<string>();
+  
+  // Frontmatter fields
+  frontmatter = signal({
+    title: '',
+    author: '',
+    date: '',
+    image: '',
+    slug: '',
+    excerpt: '',
+    tags: [] as string[],
+    sections: ''
+  });
   readonly #githubSave = inject(SaveToGithubService);
   readonly #router = inject(Router);
   constructor(private http: HttpClient) {}
@@ -85,7 +97,12 @@ export class ArticleEditorComponent implements OnInit {
   }
 
   convertMdxToEditorBlocks(mdx: string): any {
-    const lines = mdx.split('\n');
+    const { frontmatter, content } = this.parseFrontmatter(mdx);
+    
+    // Update frontmatter signal
+    this.frontmatter.set(frontmatter);
+    
+    const lines = content.split('\n');
     const blocks: any[] = [];
 
     for (const line of lines) {
@@ -101,8 +118,102 @@ export class ArticleEditorComponent implements OnInit {
     return { blocks };
   }
 
+  parseFrontmatter(mdx: string): { frontmatter: any, content: string } {
+    const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
+    const match = mdx.match(frontmatterRegex);
+    
+    if (!match) {
+      return {
+        frontmatter: {
+          title: '',
+          author: '',
+          date: '',
+          image: '',
+          slug: '',
+          excerpt: '',
+          tags: [],
+          sections: ''
+        },
+        content: mdx
+      };
+    }
+    
+    const frontmatterText = match[1];
+    const content = match[2];
+    
+    // Parse YAML-like frontmatter
+    const frontmatter: any = {
+      title: '',
+      author: '',
+      date: '',
+      image: '',
+      slug: '',
+      excerpt: '',
+      tags: [],
+      sections: ''
+    };
+    
+    const lines = frontmatterText.split('\n');
+    let currentKey = '';
+    let inTagsSection = false;
+    
+    for (const line of lines) {
+      const trimmedLine = line.trim();
+      if (!trimmedLine) continue;
+      
+      if (trimmedLine === 'tags:') {
+        inTagsSection = true;
+        currentKey = 'tags';
+        continue;
+      }
+      
+      if (trimmedLine.startsWith('- ') && inTagsSection) {
+        frontmatter.tags.push(trimmedLine.slice(2).trim());
+        continue;
+      }
+      
+      if (trimmedLine.includes(':')) {
+        inTagsSection = false;
+        const [key, ...valueParts] = trimmedLine.split(':');
+        const value = valueParts.join(':').trim();
+        currentKey = key.trim();
+        
+        if (currentKey in frontmatter) {
+          frontmatter[currentKey] = value;
+        }
+      }
+    }
+    
+    return { frontmatter, content };
+  }
+
   convertToMDX(data: any): string {
-    return data.blocks
+    const fm = this.frontmatter();
+    
+    // Build frontmatter
+    let frontmatterText = '---\n';
+    frontmatterText += `title: ${fm.title}\n`;
+    frontmatterText += `author: ${fm.author}\n`;
+    frontmatterText += `date: ${fm.date}\n`;
+    frontmatterText += `image: ${fm.image}\n`;
+    frontmatterText += `slug: ${fm.slug}\n`;
+    frontmatterText += `excerpt: ${fm.excerpt}\n`;
+    
+    if (fm.tags.length > 0) {
+      frontmatterText += 'tags:\n';
+      for (const tag of fm.tags) {
+        frontmatterText += `- ${tag}\n`;
+      }
+    }
+    
+    if (fm.sections) {
+      frontmatterText += `sections: ${fm.sections}\n`;
+    }
+    
+    frontmatterText += '---\n\n';
+    
+    // Build content
+    const content = data.blocks
       .map((block: any) => {
         if (block.type === 'header') {
           return `${'#'.repeat(block.data.level)} ${block.data.text}`;
@@ -115,6 +226,31 @@ export class ArticleEditorComponent implements OnInit {
         return '';
       })
       .join('\n\n');
+    
+    return frontmatterText + content;
+  }
+  
+  updateFrontmatterField(field: string, value: any) {
+    const current = this.frontmatter();
+    this.frontmatter.set({ ...current, [field]: value });
+  }
+  
+  addTag() {
+    const current = this.frontmatter();
+    this.frontmatter.set({ ...current, tags: [...current.tags, ''] });
+  }
+  
+  updateTag(index: number, value: string) {
+    const current = this.frontmatter();
+    const newTags = [...current.tags];
+    newTags[index] = value;
+    this.frontmatter.set({ ...current, tags: newTags });
+  }
+  
+  removeTag(index: number) {
+    const current = this.frontmatter();
+    const newTags = current.tags.filter((_, i) => i !== index);
+    this.frontmatter.set({ ...current, tags: newTags });
   }
 
   close() {
