@@ -15,4 +15,6 @@ tags:
 
 [Download het organogram](assets/documents/Fc_Landen_Organogram-1.pdf)
 
+![Image](https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/i6ebfac031a2d6f441f8735a791c3b132.png)
+
 ---
