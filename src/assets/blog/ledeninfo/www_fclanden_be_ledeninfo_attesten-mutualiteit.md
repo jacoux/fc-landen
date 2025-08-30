@@ -17,7 +17,7 @@ Hierbij de te volgen stappen :
 
 - Voorzie het formulier van een&nbsp;kleefstrookje van de mutualiteit op naam van de speler.
 
--&nbsp;Bezorg het formulier&nbsp;aan de voorzitter Thierie Tony of&nbsp; geef het af aan jouw trainer, afgevaardigde of een&nbsp;kantinemedewerker.
+-&nbsp;Bezorg het formulier&nbsp;aan de voorzitter&nbsp;Bart Freson of geef het af aan jouw trainer, afgevaardigde of een&nbsp;kantinemedewerker.
 
 &nbsp;- Na invulling en ondertekening door de club zal het aanvraagformulier worden terugbezorgd.
 
