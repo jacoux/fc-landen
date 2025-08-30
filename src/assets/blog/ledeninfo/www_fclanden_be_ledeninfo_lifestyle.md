@@ -3,7 +3,7 @@ title: Lifestyle
 author: FC Landen
 date: 30-08-2025
 image: 
-slug: /lifestyle
+slug: /ledeninfo/lifestyle
 excerpt: Aanbevelingen rond levensstijl.
 ---
 
