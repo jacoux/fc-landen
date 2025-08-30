@@ -7,19 +7,14 @@ slug: /ledeninfo/gezinskorting
 excerpt: Gezinskorting.
 ---
 
-
 ## Aanvraagformulier terugbetaling gezinskorting 2025-2026
 
----
-Om de terugbetaling van de gezinskorting aan te vragen kan u het onlineformulier hieronder invullen of u kan het document "Formulier gezinskorting" downloaden, invullen en terugsturen naar
+Om de terugbetaling van de gezinskorting aan te vragen kan u het document "Formulier gezinskorting" hieronder downloaden, invullen en terugsturen naar
+
 secretariaat@fclanden.be
 
 ---
 
-Formulier gezinskorting
-[Download](assets/documents/Formulier_gezinskorting.pdf)
+[Download formulier gezinskorting](assets/documents/Formulier_gezinskorting.pdf)
 
 ---
-
-
-
