@@ -1,10 +1,10 @@
 ---
-title: 
-author: 
-date: 
+title: Wedstrijdinfo
+author: FC Landen
+date: 30-08-2025
 image: 
-slug: 
-excerpt: 
+slug: /wedstrijdinfo
+excerpt: Meer info over de wedstrijden: het wedstrijdblad, aanduidingen, gele kaarten, het bondsreglement, sportleven.
 ---
 
 # Wedstrijdinfo
@@ -20,16 +20,3 @@ excerpt:
 [Sportleven](https://www.rbfa.be/nl/sportleven)
 
 ---
-
-<slider
-  autoplay="false"
-  interval="3000"
-  showDots="true"
-  showArrows="true"
-  
->
-  - url: https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/i7f06b7502447468a18cdcc9fadce42f0.png
-    caption: Test
-  - url: https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/ia7df3add5947f0e69b5e9f5488684901.png
-    caption: test2
-</slider>
