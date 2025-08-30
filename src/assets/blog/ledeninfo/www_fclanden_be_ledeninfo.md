@@ -6,22 +6,11 @@ image: /assets/images/ifa66e23c8e19fe48.png
 slug: /ledeninfo
 excerpt: Praktische informatie voor leden van FC Landen, inclusief ProSoccerData, attesten en huisregels.
 tags:
-  - ledeninfo
-  - praktisch
-  - informatie
-  - leden
-sections:
-  - Praktische Informatie
-  - ProSoccerData
-  - Attesten
-  - Huisregels
+- ledeninfo
+- praktisch
+- informatie
+- leden
 ---
-
-# Ledeninfo - FC Landen
-
-Bron: https://www.fclanden.be/ledeninfo
-
-# Ledeninfo
 
 ## PRAKTISCHE INFORMATIE
 
@@ -39,14 +28,8 @@ Bron: https://www.fclanden.be/ledeninfo
 
 ---
 
-
-
 ---
 
 ---
 
 ---
-
-
-
-
