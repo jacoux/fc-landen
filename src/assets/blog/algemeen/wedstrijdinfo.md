@@ -4,7 +4,7 @@ author: FC Landen
 date: 30-08-2025
 image: 
 slug: /wedstrijdinfo
-excerpt: Meer info over de wedstrijden: het wedstrijdblad, aanduidingen, gele kaarten, het bondsreglement, sportleven.
+excerpt: Meer info over de wedstrijden het wedstrijdblad, aanduidingen, gele kaarten, het bondsreglement, sportleven.
 ---
 
 # Wedstrijdinfo

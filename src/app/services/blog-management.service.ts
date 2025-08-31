@@ -48,11 +48,24 @@ export class BlogManagementService {
   }
 
   private loadCategoryConfigs(): Observable<CategoryConfig[]> {
+    console.log('Loading category configs...');
     return this.http.get<{categories: CategoryConfig[]}>('src/app/pages/categories.json').pipe(
-      map(response => response.categories),
-      catchError(() => {
-        console.warn('Could not load categories.json, using defaults');
-        return of([]);
+      map(response => {
+        console.log('Categories loaded successfully:', response.categories);
+        return response.categories;
+      }),
+      catchError((error) => {
+        console.error('Could not load categories.json:', error);
+        console.warn('Using default categories');
+        const defaults = [
+          { id: 'algemeen', name: 'algemeen', displayName: 'Algemeen' },
+          { id: 'clubinfo', name: 'clubinfo', displayName: 'Club Info' },
+          { id: 'ledeninfo', name: 'ledeninfo', displayName: 'Leden Info' },
+          { id: 'jeugdvoetbal', name: 'jeugdvoetbal', displayName: 'Jeugdvoetbal' },
+          { id: 'Drafts', name: 'Drafts', displayName: 'Drafts' }
+        ];
+        console.log('Using defaults:', defaults);
+        return of(defaults);
       })
     );
   }
@@ -62,8 +75,61 @@ export class BlogManagementService {
   }
 
   private autoDetectFiles(category: string): Observable<BlogFile[]> {
+    console.log('Auto-detecting files for category:', category);
     const testFiles = [
-      'nieuw.md',
+      // Algemeen files
+      'fc-landen-kampioen-2a.md',
+      'rust-zacht-voorzitter.md',
+      'sponsordag-2025.md',
+      'club-api.md',
+      'events.md',
+      'index.md',
+      'j_privacy.md',
+      'medewerker-worden.md',
+      'sitemap.md',
+      'sponsoren.md',
+      'techniek.md',
+      'wedstrijdinfo.md',
+      'word-medewerker.md',
+
+      // Clubinfo files
+      'clubgegevens.md',
+      'contact.md',
+      'infrastructuur.md',
+      'intern-reglement.md',
+      'organogram.md',
+      'privacy.md',
+      'route.md',
+      'visie.md',
+
+      // Ledeninfo files
+      'ledeninfo.md',
+      'attesten-mutualiteit.md',
+      'ehbso.md',
+      'gezinskorting.md',
+      'huisregels.md',
+      'lifestyle.md',
+      'prosoccerdata.md',
+      'sportvoeding.md',
+      'voor-de-jeugdafgevaardigde.md',
+      'voor-de-jeugdouder.md',
+      'voor-de-jeugdspeler.md',
+      'voor-de-jeugdtrainer.md',
+
+      // Jeugdvoetbal files
+      'jeugdvoetbal.md',
+      'lid-worden.md',
+      'visie-jeugd.md',
+      'doorstroming.md',
+      'ethiek-en-fairplay.md',
+      'organogram-jeugd.md',
+      'come-together.md',
+      'ploegvoorstelling-jeugd-2024-2025.md',
+      'samenwerking-voetjebal.md',
+
+      // Other
+      'ongevallen.md',
+      'nieuw.md'
     ];
 
     const fileChecks = testFiles.map(fileName =>
@@ -78,7 +144,11 @@ export class BlogManagementService {
     );
 
     return forkJoin(fileChecks).pipe(
-      map(results => results.filter(file => file !== null) as BlogFile[])
+      map(results => {
+        const validFiles = results.filter(file => file !== null) as BlogFile[];
+        console.log(`Found ${validFiles.length} files in category ${category}:`, validFiles.map(f => f.name));
+        return validFiles;
+      })
     );
   }
 

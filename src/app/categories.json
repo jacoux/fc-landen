@@ -1,0 +1,29 @@
+{
+  "categories": [
+    {
+      "id": "clubinfo",
+      "name": "clubinfo",
+      "displayName": "clubinfo"
+    },
+    {
+      "id": "ledeninfo",
+      "name": "ledeninfo",
+      "displayName": "ledeninfo"
+    },
+    {
+      "id": "algemeen",
+      "name": "algemeen",
+      "displayName": "algemeen"
+    },
+    {
+      "id": "events",
+      "name": "events",
+      "displayName": "events"
+    },
+    {
+      "id": "Drafts",
+      "name": "Drafts",
+      "displayName": "Drafts"
+    }
+  ]
+}
