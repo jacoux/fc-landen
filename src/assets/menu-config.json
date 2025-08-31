@@ -72,6 +72,16 @@
           "id": "organogram-jeugd",
           "label": "Organogram jeugd",
           "route": "/blog/jeugdvoetbal/organogram-jeugd"
+        },
+        {
+          "id": "come-together",
+          "label": "come together",
+          "route": "/blog/jeugdvoetbal/come-together"
+        },
+        {
+          "id": "samenwerking-voetjebal",
+          "label": "Samenwerking voetjebal",
+          "route": "/blog/jeugdvoetbal/samenwerking-voetjebal"
         }
       ]
     },
