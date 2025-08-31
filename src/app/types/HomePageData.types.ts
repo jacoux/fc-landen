@@ -26,11 +26,6 @@ export interface HomePageData {
       description: string;
       card: CardData[];
     };
-    slider: {
-      title: string;
-      description: string;
-      images: string[];
-    };
     blogHeader: {
       title: string;
       description: string;

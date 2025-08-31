@@ -1,0 +1,166 @@
+{
+  "menuItems": [
+    {
+      "id": "home",
+      "label": "Home",
+      "route": "/",
+      "subitems": []
+    },
+    {
+      "id": "clubinfo",
+      "label": "Clubinfo",
+      "route": "/blog/clubinfo/clubgegevens",
+      "subitems": [
+        {
+          "id": "clubgegevens",
+          "label": "Clubgegevens",
+          "route": "/blog/clubinfo/clubgegevens"
+        },
+        {
+          "id": "visie",
+          "label": "Visie",
+          "route": "/blog/clubinfo/visie"
+        },
+        {
+          "id": "organogram",
+          "label": "Organogram",
+          "route": "/blog/clubinfo/organogram"
+        },
+        {
+          "id": "infrastructuur",
+          "label": "Infrastructuur",
+          "route": "/blog/clubinfo/infrastructuur"
+        },
+        {
+          "id": "route",
+          "label": "Route",
+          "route": "/blog/clubinfo/route"
+        },
+        {
+          "id": "contact",
+          "label": "Contact",
+          "route": "/blog/clubinfo/contact"
+        }
+      ]
+    },
+    {
+      "id": "jeugdvoetbal",
+      "label": "Jeugdvoetbal",
+      "route": "/blog/jeugdvoetbal/jeugdvoetbal",
+      "subitems": [
+        {
+          "id": "lid-worden",
+          "label": "Lid worden",
+          "route": "/blog/jeugdvoetbal/lid-worden"
+        },
+        {
+          "id": "visie-jeugd",
+          "label": "Visie jeugd",
+          "route": "/blog/jeugdvoetbal/visie-jeugd"
+        },
+        {
+          "id": "doorstroming",
+          "label": "Doorstroming",
+          "route": "/blog/jeugdvoetbal/doorstroming"
+        },
+        {
+          "id": "ethiek-en-fairplay",
+          "label": "Ethiek en fairplay",
+          "route": "/blog/jeugdvoetbal/ethiek-en-fairplay"
+        },
+        {
+          "id": "organogram-jeugd",
+          "label": "Organogram jeugd",
+          "route": "/blog/jeugdvoetbal/organogram-jeugd"
+        },
+        {
+          "id": "come-together",
+          "label": "come together",
+          "route": "/blog/jeugdvoetbal/come-together"
+        },
+        {
+          "id": "samenwerking-voetjebal",
+          "label": "Samenwerking voetjebal",
+          "route": "/blog/jeugdvoetbal/samenwerking-voetjebal"
+        }
+      ]
+    },
+    {
+      "id": "ledeninfo",
+      "label": "Ledeninfo",
+      "route": "/blog/ledeninfo/ledeninfo",
+      "subitems": [
+        {
+          "id": "prosoccerdata",
+          "label": "ProSoccerData",
+          "route": "/blog/ledeninfo/prosoccerdata"
+        },
+        {
+          "id": "huisregels",
+          "label": "Huisregels",
+          "route": "/blog/ledeninfo/huisregels"
+        },
+        {
+          "id": "attesten-mutualiteit",
+          "label": "Attesten Mutualiteit",
+          "route": "/blog/ledeninfo/attesten-mutualiteit"
+        },
+        {
+          "id": "gezinskorting",
+          "label": "Gezinskorting",
+          "route": "/blog/ledeninfo/gezinskorting"
+        },
+        {
+          "id": "ehbso",
+          "label": "EHBSO",
+          "route": "/blog/ledeninfo/ehbso"
+        },
+        {
+          "id": "lifestyle",
+          "label": "Lifestyle",
+          "route": "/blog/ledeninfo/lifestyle"
+        },
+        {
+          "id": "sportvoeding",
+          "label": "Sportvoeding",
+          "route": "/blog/ledeninfo/sportvoeding"
+        },
+        {
+          "id": "club-api",
+          "label": "Club API",
+          "route": "/blog/algemeen/club-api"
+        }
+      ]
+    },
+    {
+      "id": "wedstrijdinfo",
+      "label": "Wedstrijdinfo",
+      "route": "/blog/algemeen/wedstrijdinfo",
+      "subitems": []
+    },
+    {
+      "id": "ongevallen",
+      "label": "Ongevallen",
+      "route": "/blog/ongevallen",
+      "subitems": []
+    },
+    {
+      "id": "medewerker-worden",
+      "label": "Word medewerker",
+      "route": "/blog/algemeen/medewerker-worden",
+      "subitems": []
+    },
+    {
+      "id": "techniek",
+      "label": "Techniek",
+      "route": "/blog/algemeen/techniek",
+      "subitems": []
+    },
+    {
+      "id": "sponsoren",
+      "label": "Sponsoren",
+      "route": "/blog/algemeen/sponsoren",
+      "subitems": []
+    }
+  ]
+}

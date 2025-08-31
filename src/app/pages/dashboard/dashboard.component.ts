@@ -3,11 +3,13 @@ import { AuthService } from '../../services/auth.service';
 import { BlogManagementService, BlogCategory, CategoryConfig } from '../../services/blog-management.service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MenuEditorComponent } from '../../components/menu-editor/menu-editor.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, MenuEditorComponent, CommonModule],
   template: `
     <div class="dashboard-header">
       <h2>Dashboard</h2>
@@ -15,7 +17,25 @@ import { Router } from '@angular/router';
       <button (click)="onLogout()" class="logout-btn">Logout</button>
     </div>
 
-    <div class="blog-management">
+    <!-- Tab Navigation -->
+    <div class="tab-navigation">
+      <button 
+        (click)="activeTab.set('blog')" 
+        [class.active]="activeTab() === 'blog'"
+        class="tab-btn">
+        Blog Management
+      </button>
+      <button 
+        (click)="activeTab.set('menu')" 
+        [class.active]="activeTab() === 'menu'"
+        class="tab-btn">
+        Menu Editor
+      </button>
+    </div>
+
+    <!-- Blog Management Tab -->
+    @if (activeTab() === 'blog') {
+      <div class="blog-management">
       <h3>Blog Management</h3>
 
       <div class="create-file-section">
@@ -54,7 +74,13 @@ import { Router } from '@angular/router';
           </div>
         }
       </div>
-    </div>
+      </div>
+    }
+
+    <!-- Menu Editor Tab -->
+    @if (activeTab() === 'menu') {
+      <app-menu-editor></app-menu-editor>
+    }
   `,
   styles: [`
     :host {
@@ -80,6 +106,32 @@ import { Router } from '@angular/router';
     }
     .logout-btn:hover {
       background-color: #c82333;
+    }
+    .tab-navigation {
+      display: flex;
+      gap: 0;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #dee2e6;
+    }
+    .tab-btn {
+      padding: 12px 24px;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      color: #6c757d;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover {
+      color: #495057;
+      background-color: #f8f9fa;
+    }
+    .tab-btn.active {
+      color: #007bff;
+      border-bottom-color: #007bff;
+      background-color: #fff;
     }
     .blog-management {
       text-align: left;
@@ -185,6 +237,7 @@ export class DashboardComponent implements OnInit {
   categoryConfigs = signal<CategoryConfig[]>([]);
   selectedCategory = '';
   newFileName = '';
+  activeTab = signal<'blog' | 'menu'>('blog');
 
   ngOnInit() {
     this.loadBlogCategories();

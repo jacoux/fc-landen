@@ -10,30 +10,82 @@ export class MarkdownDirective implements AfterViewInit {
   ) {}
 
   ngAfterViewInit() {
-    let htmlContent = this.el.nativeElement.innerHTML;
+    // Use setTimeout to process content after markdown has been rendered
+    setTimeout(() => {
+      this.processSliderContent();
+    }, 500);
+    
+    // Set up mutation observer to handle dynamic content updates
+    const observer = new MutationObserver(() => {
+      setTimeout(() => {
+        this.processSliderContent();
+      }, 100);
+    });
+    
+    observer.observe(this.el.nativeElement, {
+      childList: true,
+      subtree: true
+    });
+  }
 
-    // For now, just handle basic content and let markdown render normally
-    // The slider functionality can be added later when the basic markdown loading is working
+  private processSliderContent() {
+    let htmlContent = this.el.nativeElement.innerHTML;
+    let hasChanges = false;
 
     // Handle baby name home component (simple replacement)
     if (htmlContent.includes('[babyNameHome]')) {
       htmlContent = htmlContent.replace('[babyNameHome]', '<div>Baby Name Component Placeholder</div>');
+      hasChanges = true;
     }
 
-    // Handle slider components (convert to simple image list for now)
+    // Handle slider components - convert to responsive image gallery
     const sliderMatches = htmlContent.match(/<slider[^>]*>[\s\S]*?<\/slider>/g);
     if (sliderMatches) {
       for (const sliderMatch of sliderMatches) {
         const sliderData = this.parseSliderMarkdown(sliderMatch);
-        let imagesHtml = '<div class="slider-placeholder"><h4>Slider:</h4>';
+        
+        // Create a responsive image gallery as HTML
+        let sliderHtml = `
+        <div class="slider-container relative overflow-hidden rounded-lg shadow-lg bg-gray-100 mb-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">`;
+        
         sliderData.images.forEach((img: any) => {
-          imagesHtml += `<img src="${img.url}" alt="${img.caption || 'Image'}" style="max-width: 300px; margin: 10px;" />`;
+          sliderHtml += `
+            <div class="image-item">
+              <img src="${img.url}" alt="${img.caption ?? 'Slider image'}" 
+                   class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+                   onclick="this.classList.toggle('full-size')">
+              ${img.caption ? `<p class="text-sm text-gray-600 mt-2 text-center">${img.caption}</p>` : ''}
+            </div>`;
         });
-        imagesHtml += '</div>';
-        htmlContent = htmlContent.replace(sliderMatch, imagesHtml);
+        
+        sliderHtml += `
+          </div>
+          ${sliderData.caption ? `<div class="px-4 pb-4"><p class="text-gray-700 text-sm text-center font-medium">${sliderData.caption}</p></div>` : ''}
+        </div>
+        <style>
+          .image-item img.full-size {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: contain;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            cursor: zoom-out;
+          }
+        </style>`;
+        
+        htmlContent = htmlContent.replace(sliderMatch, sliderHtml);
+        hasChanges = true;
       }
     }
 
+    // Only update innerHTML if we made changes
+    if (hasChanges) {
+      this.el.nativeElement.innerHTML = htmlContent;
+    }
   }
 
   private parseSliderMarkdown(sliderMarkdown: string): any {

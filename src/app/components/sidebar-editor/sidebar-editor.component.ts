@@ -56,11 +56,6 @@ export class SidebarEditorComponent implements OnInit {
         description: '',
         articlePaths: []
       },
-      slider: {
-        title: '',
-        description: '',
-        images: []
-      },
       newsletter: {
         title: '',
         description: '',
@@ -105,11 +100,6 @@ export class SidebarEditorComponent implements OnInit {
           title: this.block()?.sections.events.title ?? '',
           description: this.block()?.sections.events.description ?? '',
           articlePaths: this.block()?.sections.events.articlePaths ?? []
-        },
-        slider: {
-          title: this.block()?.sections.slider.title ?? '',
-          description: this.block()?.sections.slider.description ?? '',
-          images: this.block()?.sections.slider.images ?? []
         },
         newsletter: {
           title: this.block()?.sections.newsletter.title ?? '',
