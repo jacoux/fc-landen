@@ -12,11 +12,12 @@ import {EditorModeDirective} from '../../directives/articleEditor.directive';
 import {SidebarEditorComponent} from '../../components/sidebar-editor/sidebar-editor.component';
 import {stripMetadata} from '../../metadata.util';
 import {FormsModule} from '@angular/forms';
+import {SliderComponent} from '../../components/slider/slider.component';
 
 @Component({
   selector: 'app-blog-post',
   standalone: true,
-  imports: [MarkdownModule, MarkdownDirective, BlogHeaderComponent, ArticleEditorComponent, EditorModeDirective, FormsModule],
+  imports: [MarkdownModule, MarkdownDirective, BlogHeaderComponent, ArticleEditorComponent, EditorModeDirective, FormsModule, SliderComponent],
   providers: [
     provideMarkdown()
   ],
