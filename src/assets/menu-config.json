@@ -145,12 +145,6 @@
       "subitems": []
     },
     {
-      "id": "medewerker-worden",
-      "label": "Word medewerker",
-      "route": "/blog/algemeen/medewerker-worden",
-      "subitems": []
-    },
-    {
       "id": "techniek",
       "label": "Techniek",
       "route": "/blog/algemeen/techniek",
@@ -160,6 +154,12 @@
       "id": "sponsoren",
       "label": "Sponsoren",
       "route": "/blog/algemeen/sponsoren",
+      "subitems": []
+    },
+    {
+      "id": "medewerker-worden",
+      "label": "Word medewerker",
+      "route": "/blog/algemeen/medewerker-worden",
       "subitems": []
     }
   ]
