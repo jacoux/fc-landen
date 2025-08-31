@@ -13,13 +13,17 @@ import {SidebarEditorComponent} from '../../components/sidebar-editor/sidebar-ed
 import {stripMetadata} from '../../metadata.util';
 import {FormsModule} from '@angular/forms';
 import {SliderComponent} from '../../components/slider/slider.component';
+import {SecurityContext} from '@angular/core';
+import {LogosComponent} from '../../components/logos/logos.component';
 
 @Component({
   selector: 'app-blog-post',
   standalone: true,
-  imports: [MarkdownModule, MarkdownDirective, BlogHeaderComponent, ArticleEditorComponent, EditorModeDirective, FormsModule, SliderComponent],
+  imports: [MarkdownModule, MarkdownDirective, BlogHeaderComponent, ArticleEditorComponent, EditorModeDirective, FormsModule, LogosComponent],
   providers: [
-    provideMarkdown()
+    provideMarkdown({
+      sanitize: SecurityContext.NONE
+    })
   ],
   templateUrl: 'blog-post.component.html',
   styleUrl: './blog-post.component.scss'
@@ -27,7 +31,7 @@ import {SliderComponent} from '../../components/slider/slider.component';
 export class BlogPostComponent implements OnInit {
   markdownPath = signal('');
   title = signal('');
-  author = signal('Jill Pairoux');
+  author = signal('FC Landen');
   date = signal('');
   excerpt = signal('');
   sections = signal<string[]>([]);

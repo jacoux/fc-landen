@@ -30,5 +30,8 @@
   .py-2 >  a {
     @apply no-underline text-inherit;
   }
+  .footer-links > li > a {
+    @apply no-underline text-red-400;
+  }
 }
 
