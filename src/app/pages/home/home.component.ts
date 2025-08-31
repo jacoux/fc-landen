@@ -64,11 +64,6 @@ export class HomeComponent implements OnInit {
         description: '',
         articlePaths: []
       },
-      slider: {
-        images: [],
-        title: '',
-        description: '',
-      },
       newsletter: {
         title: '',
         description: '',
