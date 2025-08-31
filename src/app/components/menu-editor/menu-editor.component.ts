@@ -65,9 +65,13 @@ export interface MenuConfig {
                   <input
                     type="text"
                     [(ngModel)]="item.label"
-                    class="font-semibold bg-transparent border-none outline-none w-full"
+                    class="font-semibold bg-transparent border-none outline-none w-full mb-1"
                     placeholder="Menu label">
-                  <div class="text-sm text-gray-600 mt-1">{{item.route}}</div>
+                  <input
+                    type="text"
+                    [(ngModel)]="item.route"
+                    class="text-sm text-gray-600 bg-transparent border-none outline-none w-full"
+                    placeholder="Route path">
                 </div>
                 <div class="flex gap-2">
                   <button
@@ -101,9 +105,13 @@ export interface MenuConfig {
                     <input
                       type="text"
                       [(ngModel)]="subitem.label"
-                      class="font-medium bg-transparent border-none outline-none w-full"
+                      class="font-medium bg-transparent border-none outline-none w-full mb-1"
                       placeholder="Subitem label">
-                    <div class="text-sm text-gray-500">{{subitem.route}}</div>
+                    <input
+                      type="text"
+                      [(ngModel)]="subitem.route"
+                      class="text-sm text-gray-500 bg-transparent border-none outline-none w-full"
+                      placeholder="Route path">
                   </div>
                   <button
                     (click)="removeSubitem(i, j)"

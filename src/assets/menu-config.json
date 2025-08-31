@@ -67,6 +67,11 @@
           "id": "ethiek-en-fairplay",
           "label": "Ethiek en fairplay",
           "route": "/blog/jeugdvoetbal/ethiek-en-fairplay"
+        },
+        {
+          "id": "organogram-jeugd",
+          "label": "Organogram jeugd",
+          "route": "/blog/jeugdvoetbal/organogram-jeugd"
         }
       ]
     },
@@ -87,8 +92,33 @@
         },
         {
           "id": "attesten-mutualiteit",
-          "label": "Attesten mutualiteit",
+          "label": "Attesten Mutualiteit",
           "route": "/blog/ledeninfo/attesten-mutualiteit"
+        },
+        {
+          "id": "gezinskorting",
+          "label": "Gezinskorting",
+          "route": "/blog/ledeninfo/gezinskorting"
+        },
+        {
+          "id": "ehbso",
+          "label": "EHBSO",
+          "route": "/blog/ledeninfo/ehbso"
+        },
+        {
+          "id": "lifestyle",
+          "label": "Lifestyle",
+          "route": "/blog/ledeninfo/lifestyle"
+        },
+        {
+          "id": "sportvoeding",
+          "label": "Sportvoeding",
+          "route": "/blog/ledeninfo/sportvoeding"
+        },
+        {
+          "id": "club-api",
+          "label": "Club API",
+          "route": "/blog/algemeen/club-api"
         }
       ]
     },
@@ -102,6 +132,24 @@
       "id": "ongevallen",
       "label": "Ongevallen",
       "route": "/blog/ongevallen",
+      "subitems": []
+    },
+    {
+      "id": "medewerker-worden",
+      "label": "Word medewerker",
+      "route": "/blog/algemeen/medewerker-worden",
+      "subitems": []
+    },
+    {
+      "id": "techniek",
+      "label": "Techniek",
+      "route": "/blog/algemeen/techniek",
+      "subitems": []
+    },
+    {
+      "id": "sponsoren",
+      "label": "Sponsoren",
+      "route": "/blog/algemeen/sponsoren",
       "subitems": []
     }
   ]
