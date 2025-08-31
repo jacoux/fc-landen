@@ -1,83 +1,121 @@
-const { Octokit } = require('@octokit/rest');
-
 export default async function handler(req, res) {
-  // Set CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  const allowedOrigins = ['https://fclanden.be', 'https://fc-landen.vercel.app/', 'http://localhost:4200'];
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  res.setHeader('Vary', 'Origin');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
+  // Handle preflight requests
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
 
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    return res.status(405).json({ message: 'Only POST allowed' });
+  }
+
+  const { menuItems } = req.body;
+
+  if (!menuItems) {
+    return res.status(400).json({
+      message: 'Missing required field: menuItems is required'
+    });
+  }
+
+  const githubToken = process.env.GITHUB_TOKEN;
+  const repo = "jacoux/fc-landen";
+
+  if (!githubToken) {
+    return res.status(500).json({ message: 'GitHub token not configured' });
   }
 
   try {
-    const { menuItems } = req.body;
+    const filePath = 'assets/menu-config.json';
+    let currentSha;
+    let isNewFile = false;
 
-    if (!menuItems) {
-      return res.status(400).json({ error: 'Menu items are required' });
-    }
-
-    const githubToken = process.env.GITHUB_TOKEN;
-    const repo = process.env.GITHUB_REPO || 'FCLanden/FCLanden-front';
-    
-    if (!githubToken) {
-      return res.status(500).json({ error: 'GitHub token not configured' });
-    }
-
-    const octokit = new Octokit({
-      auth: githubToken,
+    // Check if file exists to get SHA
+    const fileCheck = await fetch(`https://api.github.com/repos/${repo}/contents/src/${filePath}`, {
+      headers: {
+        Authorization: `Bearer ${githubToken}`,
+        Accept: 'application/vnd.github.v3+json',
+      },
     });
+
+    if (fileCheck.ok) {
+      const fileData = await fileCheck.json();
+      currentSha = fileData.sha;
+    } else if (fileCheck.status === 404) {
+      isNewFile = true;
+    } else {
+      const errorData = await fileCheck.json().catch(() => ({ message: 'Unknown error' }));
+      return res.status(fileCheck.status).json({
+        message: 'Failed to check file existence',
+        error: errorData
+      });
+    }
 
     const menuConfig = {
       menuItems
     };
 
     const content = JSON.stringify(menuConfig, null, 2);
-    const encodedContent = Buffer.from(content).toString('base64');
-    const filePath = 'src/assets/menu-config.json';
 
-    let sha;
-    try {
-      // Try to get the existing file to get its SHA
-      const existingFile = await octokit.rest.repos.getContent({
-        owner: repo.split('/')[0],
-        repo: repo.split('/')[1],
-        path: filePath,
-      });
-      sha = existingFile.data.sha;
-    } catch (error) {
-      // File doesn't exist, sha will be undefined (creating new file)
-      console.log('Creating new menu config file');
-    }
-
+    // Prepare request body
     const requestBody = {
-      message: `Update menu configuration\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>`,
-      content: encodedContent,
-      ...(sha && { sha }) // Only include sha if file exists
+      message: isNewFile ? `Create ${filePath}` : `Update menu configuration
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>`,
+      content: Buffer.from(content).toString('base64'),
     };
 
-    const result = await octokit.rest.repos.createOrUpdateFileContents({
-      owner: repo.split('/')[0],
-      repo: repo.split('/')[1],
-      path: filePath,
-      ...requestBody
+    if (currentSha) {
+      requestBody.sha = currentSha;
+    }
+
+    // Save/update file
+    const result = await fetch(`https://api.github.com/repos/${repo}/contents/src/${filePath}`, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${githubToken}`,
+        Accept: 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
     });
 
-    res.status(200).json({ 
-      success: true, 
-      message: 'Menu configuration saved successfully',
-      sha: result.data.content.sha
+    const data = await result.json();
+
+    if (!result.ok) {
+      const errorMessages = {
+        401: 'GitHub authentication failed',
+        409: 'File conflict - refresh and try again',
+        422: 'Invalid file content or path'
+      };
+
+      return res.status(result.status).json({
+        message: errorMessages[result.status] || 'GitHub API request failed',
+        error: data
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      action: isNewFile ? 'created' : 'updated',
+      filePath,
+      sha: data.content?.sha,
     });
 
   } catch (error) {
-    console.error('Error saving menu configuration:', error);
-    res.status(500).json({ 
-      error: 'Failed to save menu configuration', 
-      details: error.message 
+    console.error('Error:', error);
+    return res.status(500).json({
+      message: 'Internal server error',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 }
