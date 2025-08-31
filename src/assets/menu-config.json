@@ -1,0 +1,108 @@
+{
+  "menuItems": [
+    {
+      "id": "home",
+      "label": "Home",
+      "route": "/",
+      "subitems": []
+    },
+    {
+      "id": "clubinfo",
+      "label": "Clubinfo",
+      "route": "/blog/clubinfo/clubgegevens",
+      "subitems": [
+        {
+          "id": "clubgegevens",
+          "label": "Clubgegevens",
+          "route": "/blog/clubinfo/clubgegevens"
+        },
+        {
+          "id": "visie",
+          "label": "Visie",
+          "route": "/blog/clubinfo/visie"
+        },
+        {
+          "id": "organogram",
+          "label": "Organogram",
+          "route": "/blog/clubinfo/organogram"
+        },
+        {
+          "id": "infrastructuur",
+          "label": "Infrastructuur",
+          "route": "/blog/clubinfo/infrastructuur"
+        },
+        {
+          "id": "route",
+          "label": "Route",
+          "route": "/blog/clubinfo/route"
+        },
+        {
+          "id": "contact",
+          "label": "Contact",
+          "route": "/blog/clubinfo/contact"
+        }
+      ]
+    },
+    {
+      "id": "jeugdvoetbal",
+      "label": "Jeugdvoetbal",
+      "route": "/blog/jeugdvoetbal/jeugdvoetbal",
+      "subitems": [
+        {
+          "id": "lid-worden",
+          "label": "Lid worden",
+          "route": "/blog/jeugdvoetbal/lid-worden"
+        },
+        {
+          "id": "visie-jeugd",
+          "label": "Visie jeugd",
+          "route": "/blog/jeugdvoetbal/visie-jeugd"
+        },
+        {
+          "id": "doorstroming",
+          "label": "Doorstroming",
+          "route": "/blog/jeugdvoetbal/doorstroming"
+        },
+        {
+          "id": "ethiek-en-fairplay",
+          "label": "Ethiek en fairplay",
+          "route": "/blog/jeugdvoetbal/ethiek-en-fairplay"
+        }
+      ]
+    },
+    {
+      "id": "ledeninfo",
+      "label": "Ledeninfo",
+      "route": "/blog/ledeninfo/ledeninfo",
+      "subitems": [
+        {
+          "id": "prosoccerdata",
+          "label": "ProSoccerData",
+          "route": "/blog/ledeninfo/prosoccerdata"
+        },
+        {
+          "id": "huisregels",
+          "label": "Huisregels",
+          "route": "/blog/ledeninfo/huisregels"
+        },
+        {
+          "id": "attesten-mutualiteit",
+          "label": "Attesten mutualiteit",
+          "route": "/blog/ledeninfo/attesten-mutualiteit"
+        }
+      ]
+    },
+    {
+      "id": "wedstrijdinfo",
+      "label": "Wedstrijdinfo",
+      "route": "/blog/algemeen/wedstrijdinfo",
+      "subitems": []
+    },
+    {
+      "id": "ongevallen",
+      "label": "Ongevallen",
+      "route": "/blog/ongevallen",
+      "subitems": []
+    }
+  ]
+}

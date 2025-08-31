@@ -5,77 +5,30 @@
         <h1 class="text-xl font-bold text-red-700">FC Landen</h1>
       </div>
       <nav class="hidden md:flex space-x-8 items-center">
-        <a href="/" class="text-gray-600 hover:text-red-700 transition">Home</a>
-
-        <!-- Clubinfo Dropdown -->
-        <div class="relative group">
-          <button class="text-gray-600 hover:text-red-700 transition flex items-center">
-            Clubinfo
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-            <div class="py-2">
-              <a href="/blog/clubinfo/clubgegevens" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Clubgegevens</a>
-              <a href="/blog/clubinfo/visie" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Visie</a>
-              <a href="/blog/clubinfo/organogram" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Organogram</a>
-              <a href="/blog/clubinfo/infrastructuur" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Infrastructuur</a>
-              <a href="/blog/clubinfo/route" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Route</a>
-              <a href="/blog/clubinfo/contact" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Contact</a>
+        <!-- Dynamic Menu Items -->
+        @for (item of menuItems(); track item.id) {
+          @if (item.subitems.length === 0) {
+            <!-- Simple menu item without subitems -->
+            <a [href]="item.route" class="text-gray-600 hover:text-red-700 transition">{{item.label}}</a>
+          } @else {
+            <!-- Menu item with dropdown -->
+            <div class="relative group">
+              <button class="text-gray-600 hover:text-red-700 transition flex items-center">
+                {{item.label}}
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <div class="py-2">
+                  @for (subitem of item.subitems; track subitem.id) {
+                    <a [href]="subitem.route" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">{{subitem.label}}</a>
+                  }
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <!-- Jeugdvoetbal -->
-        <a href="/blog/jeugdvoetbal/jeugdvoetbal" class="text-gray-600 hover:text-red-700 transition">Jeugdvoetbal</a>     <!-- Jeugdvoetbal -->
-        <a href="/blog/algemeen/ongevallen" class="text-gray-600 hover:text-red-700 transition">Ongevallen</a>
-
-        <!-- Lid worden Dropdown -->
-        <div class="relative group">
-          <button class="text-gray-600 hover:text-red-700 transition flex items-center">
-            Lid worden
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-            <div class="py-2">
-              <a href="/lid-worden" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Lid worden</a>
-              <a href="/lid-worden/visie-jeugd" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Visie Jeugd</a>
-              <a href="/lid-worden/doorstroming" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Doorstroming</a>
-              <a href="/lid-worden/ethiek-en-fairplay" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Ethiek & Fair Play</a>
-              <a href="/lid-worden/organogram-jeugd" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Organogram Jeugd</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Ledeninfo Dropdown -->
-        <div class="relative group">
-          <button class="text-gray-600 hover:text-red-700 transition flex items-center">
-            Ledeninfo
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-            <div class="py-2">
-              <a href="/blog/ledeninfo/prosoccerdata" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">ProSoccerData</a>
-              <a href="/blog/ledeninfo/huisregels" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Huisregels</a>
-              <a href="/blog/ledeninfo/attesten-mutualiteit" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Attesten Mutualiteit</a>
-              <a href="/blog/ledeninfo/gezinskorting" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Gezinskorting</a>
-              <a href="/blog/ledeninfo/ehbso" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">EHBSO</a>
-              <a href="/blog/ledeninfo/lifestyle" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Lifestyle</a>
-              <a href="/blog/ledeninfo/sportvoeding" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Sportvoeding</a>
-              <a href="/blog/algemeen/club-api" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700">Club API</a>
-            </div>
-          </div>
-        </div>
-
-        <a href="/blog/algemeen/wedstrijdinfo" class="text-gray-600 hover:text-red-700 transition">Wedstrijdinfo</a>
-        <a href="/blog/algemeen/techniek" class="text-gray-600 hover:text-red-700 transition">Techniek</a>
-        <a href="/blog/algemeen/sponsoren" class="text-gray-600 hover:text-red-700 transition">Sponsoren</a>
-        <a href="/blog/algemeen/medewerker-worden" class="text-gray-600 hover:text-red-700 transition">word medewerker</a>
+          }
+        }
       </nav>
       <button id="mobile-menu-btn" class="md:hidden text-gray-600">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -87,70 +40,28 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
       <div class="px-4 py-2 space-y-1">
-        <a href="/" class="block py-2 text-gray-600 hover:text-red-700 transition">Home</a>
-
-        <!-- Mobile Clubinfo -->
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-btn w-full text-left py-2 text-gray-600 hover:text-red-700 transition flex items-center justify-between">
-            Clubinfo
-            <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="mobile-dropdown-content hidden pl-4 pb-2">
-            <a href="/blog/clubinfo/clubgegevens" class="block py-1 text-sm text-gray-600 hover:text-red-700">Clubgegevens</a>
-            <a href="/blog/clubinfo/visie" class="block py-1 text-sm text-gray-600 hover:text-red-700">Visie</a>
-            <a href="/blog/clubinfo/organogram" class="block py-1 text-sm text-gray-600 hover:text-red-700">Organogram</a>
-            <a href="/blog/clubinfo/infrastructuur" class="block py-1 text-sm text-gray-600 hover:text-red-700">Infrastructuur</a>
-            <a href="/blog/clubinfo/route" class="block py-1 text-sm text-gray-600 hover:text-red-700">Route</a>
-            <a href="/blog/clubinfo/contact" class="block py-1 text-sm text-gray-600 hover:text-red-700">Contact</a>
-          </div>
-        </div>
-
-        <a href="/blog/jeugdvoetbal/jeugdvoetbal" class="block py-2 text-gray-600 hover:text-red-700 transition">Jeugdvoetbal</a>
-
-        <!-- Mobile Lid worden -->
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-btn w-full text-left py-2 text-gray-600 hover:text-red-700 transition flex items-center justify-between">
-            Lid worden
-            <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="mobile-dropdown-content hidden pl-4 pb-2">
-            <a href="/lid-worden" class="block py-1 text-sm text-gray-600 hover:text-red-700">Lid worden</a>
-            <a href="/lid-worden/visie-jeugd" class="block py-1 text-sm text-gray-600 hover:text-red-700">Visie Jeugd</a>
-            <a href="/lid-worden/doorstroming" class="block py-1 text-sm text-gray-600 hover:text-red-700">Doorstroming</a>
-            <a href="/lid-worden/ethiek-en-fairplay" class="block py-1 text-sm text-gray-600 hover:text-red-700">Ethiek & Fair Play</a>
-            <a href="/lid-worden/organogram-jeugd" class="block py-1 text-sm text-gray-600 hover:text-red-700">Organogram Jeugd</a>
-          </div>
-        </div>
-
-        <!-- Mobile Ledeninfo -->
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-btn w-full text-left py-2 text-gray-600 hover:text-red-700 transition flex items-center justify-between">
-            Ledeninfo
-            <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="mobile-dropdown-content hidden pl-4 pb-2">
-            <a href="/blog/ledeninfo/prosoccerdata" class="block py-1 text-sm text-gray-600 hover:text-red-700">ProSoccerData</a>
-            <a href="/blog/ledeninfo/huisregels" class="block py-1 text-sm text-gray-600 hover:text-red-700">Huisregels</a>
-            <a href="/blog/ledeninfo/attesten-mutualiteit" class="block py-1 text-sm text-gray-600 hover:text-red-700">Attesten Mutualiteit</a>
-            <a href="/blog/ledeninfo/gezinskorting" class="block py-1 text-sm text-gray-600 hover:text-red-700">Gezinskorting</a>
-            <a href="/blog/ledeninfo/ehbso" class="block py-1 text-sm text-gray-600 hover:text-red-700">EHBSO</a>
-            <a href="/blog/ledeninfo/lifestyle" class="block py-1 text-sm text-gray-600 hover:text-red-700">Lifestyle</a>
-            <a href="/blog/ledeninfo/sportvoeding" class="block py-1 text-sm text-gray-600 hover:text-red-700">Sportvoeding</a>
-            <a href="/blog/algemeen/club-api" class="block py-1 text-sm text-gray-600 hover:text-red-700">Club API</a>
-          </div>
-        </div>
-
-        <a href="/blog/algemeen/wedstrijdinfo" class="block py-2 text-gray-600 hover:text-red-700 transition">Wedstrijdinfo</a>
-        <a href="/blog/algemeen/techniek" class="block py-2 text-gray-600 hover:text-red-700 transition">Techniek</a>
-        <a href="/blog/algemeen/sponsoren" class="block py-2 text-gray-600 hover:text-red-700 transition">Sponsoren</a>
-        <a href="/blog/algemeen/medewerker-worden" class="text-gray-600 hover:text-red-700 transition">word medewerker</a>
-
+        <!-- Dynamic Mobile Menu Items -->
+        @for (item of menuItems(); track item.id) {
+          @if (item.subitems.length === 0) {
+            <!-- Simple mobile menu item without subitems -->
+            <a [href]="item.route" class="block py-2 text-gray-600 hover:text-red-700 transition">{{item.label}}</a>
+          } @else {
+            <!-- Mobile menu item with dropdown -->
+            <div class="mobile-dropdown">
+              <button class="mobile-dropdown-btn w-full text-left py-2 text-gray-600 hover:text-red-700 transition flex items-center justify-between">
+                {{item.label}}
+                <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="mobile-dropdown-content hidden pl-4 pb-2">
+                @for (subitem of item.subitems; track subitem.id) {
+                  <a [href]="subitem.route" class="block py-1 text-sm text-gray-600 hover:text-red-700">{{subitem.label}}</a>
+                }
+              </div>
+            </div>
+          }
+        }
       </div>
     </div>
   </header>

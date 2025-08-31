@@ -1,20 +1,27 @@
-import {Component, OnInit, AfterViewInit, inject, PLATFORM_ID} from '@angular/core';
+import {Component, OnInit, AfterViewInit, inject, PLATFORM_ID, signal} from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
 import { BabynameHomeComponent } from "./components/babyname-home/babyname-home.component";
 import { DisplayNameComponent } from "./components/display-name/display-name.component";
-import {isPlatformBrowser} from '@angular/common';
+import {isPlatformBrowser, CommonModule} from '@angular/common';
+import {MenuService, MenuItem} from './services/menu.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet, RouterLink, CommonModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'FC Landen';
   private readonly platformId = inject(PLATFORM_ID);
+  menuItems = signal<MenuItem[]>([]);
+
+  constructor(private menuService: MenuService) {}
 
   ngOnInit(): void {
+    this.menuService.menuConfig$.subscribe(config => {
+      this.menuItems.set(config.menuItems);
+    });
   }
 
   ngAfterViewInit(): void {
