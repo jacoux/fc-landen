@@ -6,43 +6,36 @@ image: /assets/images/ifa66e23c8e19fe48.png
 slug: /lid-worden/ethiek-en-fairplay
 excerpt: Ethiek en fairplay.
 tags:
-  - ongevallen
-  - verzekering
-  - sportongeval
-  - procedures
-sections:
-  - Procedure
-  - Ongeval Formulier
-  - Aangifte Ongeval
-  - Terugbetaling Onkosten
-  - Kinestherapie
+- ongevallen
+- verzekering
+- sportongeval
+- procedures
 ---
-
-# Ethiek en fairplay
 
 ## 1/ Normen en waarden
 
-Overeenkomstig haar visieteksten sluit de club zich aan bij de waarden die worden uitgedragen door de  "Panathlonverklaring" over de ethiek in de jeugdsport.
+Overeenkomstig haar visieteksten sluit de club zich aan bij de waarden die worden uitgedragen door de&nbsp; "Panathlonverklaring" over de ethiek in de jeugdsport.
 
 Die waarden willen wij gestalte zien krijgen door:
 
--          het aanleren van werken in teamverband (SAMENHORIGHEID);
+-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; het aanleren van werken in teamverband (SAMENHORIGHEID);
 
--          het leren omgaan met succes en tegenslag (RELATIVERING);
+-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; het leren omgaan met succes en tegenslag (RELATIVERING);
 
--          het aanleren van empowerment (ZELFSTURING);
+-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; het aanleren van empowerment (ZELFSTURING);
 
--          het stimuleren van discipline (ZELFBEHEERSING);
+-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; het stimuleren van discipline (ZELFBEHEERSING);
 
--          het bevorderen van een correcte omgang met eenieder, zowel binnen de eigen club als ten aanzien van de tegenpartij (RESPECT);
+-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; het bevorderen van een correcte omgang met eenieder, zowel binnen de eigen club als ten aanzien van de tegenpartij (RESPECT);
 
--          het weren van pestgedrag, racisme en discriminatie (GELIJKHEID).
+-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; het weren van pestgedrag, racisme en discriminatie (GELIJKHEID).
 
 FC Landen verwacht van elke speler, ouder en medewerker correct gedrag op en naast het veld.
 
 Panathlonverklaring.pdf
 
 Adobe Acrobat document
+
 226.8 KB
 
 [Download](assets/documents/Panathlonverklaring.pdf)
@@ -74,7 +67,9 @@ FC Landen vraagt aan elke speler, trainer en begeleider om het 'Fair Play Charte
 ## 3/ Ethisch Verantwoord Scouten
 
 VoetbalVlaanderen stelt: "*Scouten is niet meer weg te denken uit de hedendaagse voetbalsport. Het is natuurlijk wel belangrijk dat de manier waarop spelers van club veranderen correct en
+
 beschaafd gebeurt. Voetbal Vlaanderen stelde daarom, in samenspraak met alle clubs die vorig seizoen deelnamen aan de TVJO-workshops, een visietekst “Ethisch verantwoord scouten” op. Deze
+
 visietekst omvat richtlijnen voor zowel interne als externe scouting en richtlijnen voor de voetbalouders*".
 
 [Meer info op de website van VoetbalVlaanderen](https://www.voetbalvlaanderen.be/club/ethisch-verantwoord-scouten)
@@ -84,7 +79,3 @@ visietekst omvat richtlijnen voor zowel interne als externe scouting en richtlij
 ## 4/ Grensoverschrijdend gedrag, doping, matchfixing etcetera?
 
 [Contacteer het Meldpunt van VoetbalVlaanderen](https://www.voetbalvlaanderen.be/over-ons-0/meldpunt)
-
-
-
-
