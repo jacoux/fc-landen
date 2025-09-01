@@ -7,7 +7,7 @@ slug: /ledeninfo/prosoccerdata
 excerpt: Praktische informatie voor leden van FC Landen, meer specifiek over het gebruik van ProSoccerData.
 ---
 
-Alle clubcommunicatie en alle planning verloopt via de tool ProSoccerData. Deze is enkel en alleen toegankelijk voor spelers die bij FC Landen zijn aangesloten.&nbsp;Op site ProSoccerData (https://www.prosoccerdata.com/splash) rechtsboven klikken op ''Log-in''.
+Alle clubcommunicatie en alle planning verloopt via de tool ProSoccerData. Deze is enkel en alleen toegankelijk voor spelers die bij FC Landen zijn aangesloten.&nbsp;Op de site van ProSoccerData (https://www.prosoccerdata.com/splash) rechtsboven klikken op ''Log-in''.
 
 Infopresentatie\_psd.pdf [Download](assets/documents/Infopresentatie_psd.pdf)
 
