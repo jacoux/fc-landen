@@ -55,11 +55,6 @@
       "route": "/blog/jeugdvoetbal/jeugdvoetbal",
       "subitems": [
         {
-          "id": "lid-worden",
-          "label": "Lid worden",
-          "route": "/blog/jeugdvoetbal/lid-worden"
-        },
-        {
           "id": "visie-jeugd",
           "label": "Visie jeugd",
           "route": "/blog/jeugdvoetbal/visie-jeugd"
@@ -70,24 +65,29 @@
           "route": "/blog/jeugdvoetbal/doorstroming"
         },
         {
-          "id": "ethiek-en-fairplay",
-          "label": "Ethiek en fairplay",
-          "route": "/blog/jeugdvoetbal/ethiek-en-fairplay"
-        },
-        {
           "id": "organogram-jeugd",
           "label": "Organogram jeugd",
           "route": "/blog/jeugdvoetbal/organogram-jeugd"
         },
         {
+          "id": "ethiek-en-fairplay",
+          "label": "Ethiek en fairplay",
+          "route": "/blog/jeugdvoetbal/ethiek-en-fairplay"
+        },
+        {
           "id": "come-together",
-          "label": "come together",
+          "label": "Come together",
           "route": "/blog/jeugdvoetbal/come-together"
         },
         {
           "id": "samenwerking-voetjebal",
           "label": "Samenwerking voetjebal",
           "route": "/blog/jeugdvoetbal/samenwerking-voetjebal"
+        },
+        {
+          "id": "lid-worden",
+          "label": "Lid worden",
+          "route": "/blog/jeugdvoetbal/lid-worden"
         }
       ]
     },
@@ -96,6 +96,11 @@
       "label": "Ledeninfo",
       "route": "/blog/ledeninfo/ledeninfo",
       "subitems": [
+        {
+          "id": "attesten-mutualiteit",
+          "label": "Attesten Mutualiteit",
+          "route": "/blog/ledeninfo/attesten-mutualiteit"
+        },
         {
           "id": "prosoccerdata",
           "label": "ProSoccerData",
@@ -107,19 +112,9 @@
           "route": "/blog/ledeninfo/huisregels"
         },
         {
-          "id": "attesten-mutualiteit",
-          "label": "Attesten Mutualiteit",
-          "route": "/blog/ledeninfo/attesten-mutualiteit"
-        },
-        {
           "id": "gezinskorting",
           "label": "Gezinskorting",
           "route": "/blog/ledeninfo/gezinskorting"
-        },
-        {
-          "id": "ehbso",
-          "label": "EHBSO",
-          "route": "/blog/ledeninfo/ehbso"
         },
         {
           "id": "lifestyle",
@@ -130,6 +125,11 @@
           "id": "sportvoeding",
           "label": "Sportvoeding",
           "route": "/blog/ledeninfo/sportvoeding"
+        },
+        {
+          "id": "ehbso",
+          "label": "EHBSO",
+          "route": "/blog/ledeninfo/ehbso"
         },
         {
           "id": "club-api",
