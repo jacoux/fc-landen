@@ -44,6 +44,12 @@
       ]
     },
     {
+      "id": "wedstrijdinfo",
+      "label": "Wedstrijdinfo",
+      "route": "/blog/algemeen/wedstrijdinfo",
+      "subitems": []
+    },
+    {
       "id": "jeugdvoetbal",
       "label": "Jeugdvoetbal",
       "route": "/blog/jeugdvoetbal/jeugdvoetbal",
@@ -131,12 +137,6 @@
           "route": "/blog/algemeen/club-api"
         }
       ]
-    },
-    {
-      "id": "wedstrijdinfo",
-      "label": "Wedstrijdinfo",
-      "route": "/blog/algemeen/wedstrijdinfo",
-      "subitems": []
     },
     {
       "id": "ongevallen",
