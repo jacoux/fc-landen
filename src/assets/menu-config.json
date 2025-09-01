@@ -40,6 +40,18 @@
           "id": "contact",
           "label": "Contact",
           "route": "/blog/clubinfo/contact"
+        },
+        {
+          "id": "new-sub-1756752903715",
+          "label": "Intern reglement",
+          "route": "/blog/clubinfo/intern-reglement",
+          "subitems": []
+        },
+        {
+          "id": "new-sub-1756752939539",
+          "label": "Privacy",
+          "route": "/blog/clubinfo/privacy",
+          "subitems": []
         }
       ]
     },
