@@ -14,7 +14,15 @@ tags:
 
 # TECHNIEK - FC Landen
 
-![FC Landen Logo](assets/images/ifa66e23c8e19fe48.png)
+<slider
+  autoplay="false"
+  interval="3000"
+  showDots="true"
+  showArrows="true"
+  
+>
+  - url: https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/i7bb9eae50c35c953e5b612f13bb984e6.jpg
+</slider>
 
 Hieronder vinden jullie de techniekbewegingen overeenkomstig het opleidingsplan van FC Landen. Aan de slag!
 
