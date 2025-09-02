@@ -2,7 +2,7 @@
 <div class="max-w-[1030px] mx-auto px-4 sm:px-8 xl:px-0">
   @if (!newContent().trim()) {
    <div  class="article-content p-8 markdown-content" appMarkdownDirective>
-            <markdown [data]="content()"></markdown>
+            <markdown  [data]="content()"></markdown>
    </div>
   }
 
@@ -17,6 +17,5 @@
       (markdownContent)="onBlockUpdate($event)"
     />
   </div>
-
   <app-logos />
 </div>

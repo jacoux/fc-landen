@@ -1,6 +1,13 @@
 import {Component, input, OnInit, signal} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MarkdownModule, provideMarkdown } from 'ngx-markdown';
+import {
+  CLIPBOARD_OPTIONS, ClipboardButtonComponent,
+  MarkdownModule,
+  MARKED_OPTIONS,
+  MarkedOptions,
+  MarkedRenderer,
+  provideMarkdown
+} from 'ngx-markdown';
 import {HttpClient, provideHttpClient, withFetch} from '@angular/common/http';
 import { MarkdownDirective } from '../../directives/mardown.directive';
 import {BlogService, MarkdownResult} from '../../services/blog.service';
@@ -15,16 +22,19 @@ import {FormsModule} from '@angular/forms';
 import {SliderComponent} from '../../components/slider/slider.component';
 import {SecurityContext} from '@angular/core';
 import {LogosComponent} from '../../components/logos/logos.component';
+import Paragraph from '@editorjs/paragraph';
+
 
 @Component({
   selector: 'app-blog-post',
   standalone: true,
-  imports: [MarkdownModule, MarkdownDirective, BlogHeaderComponent, ArticleEditorComponent, EditorModeDirective, FormsModule, LogosComponent],
+  imports: [MarkdownModule, MarkdownDirective, LogosComponent, BlogHeaderComponent, ArticleEditorComponent, EditorModeDirective, FormsModule, LogosComponent],
   providers: [
     provideMarkdown({
-      sanitize: SecurityContext.NONE
-    })
-  ],
+      sanitize: SecurityContext.NONE,
+
+        }
+    )],
   templateUrl: 'blog-post.component.html',
   styleUrl: './blog-post.component.scss'
 })
@@ -81,4 +91,5 @@ export class BlogPostComponent implements OnInit {
     const strippedCt = stripMetadata($event);
     this.newContent.set(strippedCt);
   }
+
 }
