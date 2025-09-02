@@ -22,6 +22,7 @@ tags:
   
 >
   - url: https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/i7bb9eae50c35c953e5b612f13bb984e6.jpg
+  - url: https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/i64247bbed807b5e59f5c9c071255910c.png
 </slider>
 
 Hieronder vinden jullie de techniekbewegingen overeenkomstig het opleidingsplan van FC Landen. Aan de slag!
