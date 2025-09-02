@@ -18,6 +18,8 @@ Hieronder vinden jullie deze techniekbewegingen overeenkomstig het opleidingspla
 
 *Spelers die hun techniek verder willen oefenen, kunnen aan de slag met de filmpjes. Veel plezier!*
 
+[appLogos ["https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/i7bb9eae50c35c953e5b612f13bb984e6.jpg","https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/i64247bbed807b5e59f5c9c071255910c.png"]]
+
 ## Basis Balcontrole
 
 ### Eerste Balcontact
