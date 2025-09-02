@@ -14,20 +14,11 @@ tags:
 
 # TECHNIEK - FC Landen
 
-<slider
-  autoplay="false"
-  interval="3000"
-  showDots="true"
-  showArrows="true"
-  
->
-  - url: https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/i7bb9eae50c35c953e5b612f13bb984e6.jpg
-  - url: https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/i64247bbed807b5e59f5c9c071255910c.png
-</slider>
-
-Hieronder vinden jullie de techniekbewegingen overeenkomstig het opleidingsplan van FC Landen. Aan de slag!
+Hieronder vinden jullie deze techniekbewegingen overeenkomstig het opleidingsplan van FC Landen. Aan de slag!
 
 *Spelers die hun techniek verder willen oefenen, kunnen aan de slag met de filmpjes. Veel plezier!*
+
+[appLogos ["https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/i7bb9eae50c35c953e5b612f13bb984e6.jpg","https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/i64247bbed807b5e59f5c9c071255910c.png"]]
 
 ## Basis Balcontrole
 
