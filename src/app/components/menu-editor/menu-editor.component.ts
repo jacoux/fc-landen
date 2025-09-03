@@ -22,33 +22,11 @@ export interface MenuConfig {
   imports: [CommonModule, FormsModule, DragDropModule],
   template: `
     <div class="menu-editor p-6 bg-white rounded-lg shadow-lg">
-      <h2 class="text-2xl font-bold mb-6 text-gray-800">Menu Editor</h2>
-
-      <!-- Available Files -->
-      <div class="mb-8">
-        <h3 class="text-lg font-semibold mb-4 text-gray-700">Available Files</h3>
-        <div
-          class="available-files min-h-[100px] p-4 border-2 border-dashed border-gray-300 rounded-lg"
-          cdkDropList
-          #availableList="cdkDropList"
-          [cdkDropListData]="availableFiles()"
-          [cdkDropListConnectedTo]="['menuList']"
-          (cdkDropListDropped)="drop($event)">
-          <div
-            *ngFor="let file of availableFiles()"
-            class="file-item p-2 mb-2 bg-blue-100 border border-blue-200 rounded cursor-move hover:bg-blue-200"
-            cdkDrag>
-            <div class="flex justify-between items-center">
-              <span class="font-medium">{{file.label}}</span>
-              <span class="text-sm text-gray-600">{{file.route}}</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <h2 class="text-2xl font-bold mb-6 text-gray-800">Menu editor</h2>
 
       <!-- Menu Structure -->
       <div class="mb-8">
-        <h3 class="text-lg font-semibold mb-4 text-gray-700">Menu Structure</h3>
+        <h3 class="text-lg font-semibold mb-4 text-gray-700">Menu structuur</h3>
         <div
           class="menu-structure min-h-[200px] p-4 border-2 border-dashed border-green-300 rounded-lg"
           cdkDropList
@@ -219,7 +197,7 @@ export class MenuEditorComponent implements OnInit {
       { id: 'sponsoren', label: 'Sponsoren', route: '/blog/algemeen/sponsoren', subitems: [] },
       { id: 'club-api', label: 'Club API', route: '/blog/algemeen/club-api', subitems: [] },
       { id: 'medewerker-worden', label: 'Medewerker worden', route: '/blog/algemeen/medewerker-worden', subitems: [] },
-      { id: 'ongevallen', label: 'Ongevallen', route: '/blog/ongevallen', subitems: [] }
+      { id: 'ongevallen', label: 'Ongevallen', route: '/blog/algemeen/ongevallen', subitems: [] }
     ];
 
     // Filter out items that are already in the menu

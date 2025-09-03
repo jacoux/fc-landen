@@ -34,6 +34,7 @@ export class ArticleEditorComponent implements OnInit {
     tags: [] as string[],
     sections: ''
   });
+
   readonly #githubSave = inject(SaveToGithubService);
   readonly #router = inject(Router);
   constructor(private http: HttpClient) {}
@@ -282,6 +283,19 @@ export class ArticleEditorComponent implements OnInit {
     this.#router.navigate([], {
       queryParams: { editor: null }
     });
+  }
+
+  uploadFrontmatterImage(event: Event) {
+    const fileInput = event.target as HTMLInputElement;
+    if (fileInput.files && fileInput.files.length > 0) {
+      const file = fileInput.files[0];
+      this.uploadImageFile(file).then(response => {
+        this.updateFrontmatterField('image', response.file.url);
+        fileInput.value = '';
+      }).catch(error => {
+        console.error('Failed to upload image:', error);
+      });
+    }
   }
 
   async saveToGithub() {

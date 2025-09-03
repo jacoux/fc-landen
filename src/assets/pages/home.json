@@ -42,9 +42,7 @@
       "title": "Onze evenementen",
       "description": "Onze aankomende evenementen",
       "articlePaths": [
-        "assets/blog/algemeen/sponsordag-2025.md",
-        "assets/blog/jeugdvoetbal/ploegvoorstelling-jeugd-2024-2025.md",
-        "assets/blog/algemeen/fc-landen-kampioen-2a.md"
+        "assets/blog/events/event1.md"
       ]
     },
     "newsletter": {

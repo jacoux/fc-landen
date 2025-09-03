@@ -1,4 +1,4 @@
-<div class="fixed right-0 top-0 h-full w-[800px] bg-white shadow-xl z-50 p-4 overflow-y-auto border-l border-gray-200">
+<div class="hover:cursor-pointer fixed right-0 top-0 h-full w-[800px] bg-white shadow-xl z-50 p-4 overflow-y-auto border-l border-gray-200">
   <h2 class="text-xl font-bold mb-4">Pagina bewerken</h2>
   <div class="" (click)="close()">
     X
@@ -21,84 +21,100 @@
   <!-- Frontmatter Section -->
   <div class="p-4 bg-white border-b max-h-64 overflow-y-auto">
     <h2 class="text-lg font-medium mb-3">Metadata</h2>
-    
+
     <div class="grid grid-cols-2 gap-4">
       <div>
         <label class="block text-sm font-medium text-gray-700 mb-1">Titel</label>
-        <input 
-          type="text" 
-          class="w-full p-2 border border-gray-300 rounded text-sm" 
-          [ngModel]="frontmatter().title" 
+        <input
+          type="text"
+          class="w-full p-2 border border-gray-300 rounded text-sm"
+          [ngModel]="frontmatter().title"
           (ngModelChange)="updateFrontmatterField('title', $event)"
         />
       </div>
-      
+
       <div>
         <label class="block text-sm font-medium text-gray-700 mb-1">Auteur</label>
-        <input 
-          type="text" 
-          class="w-full p-2 border border-gray-300 rounded text-sm" 
-          [ngModel]="frontmatter().author" 
+        <input
+          type="text"
+          class="w-full p-2 border border-gray-300 rounded text-sm"
+          [ngModel]="frontmatter().author"
           (ngModelChange)="updateFrontmatterField('author', $event)"
         />
       </div>
-      
+
       <div>
         <label class="block text-sm font-medium text-gray-700 mb-1">Datum</label>
-        <input 
-          type="text" 
-          class="w-full p-2 border border-gray-300 rounded text-sm" 
-          [ngModel]="frontmatter().date" 
+        <input
+          type="text"
+          class="w-full p-2 border border-gray-300 rounded text-sm"
+          [ngModel]="frontmatter().date"
           (ngModelChange)="updateFrontmatterField('date', $event)"
           placeholder="dd-mm-yyyy"
         />
       </div>
-      
+
       <div>
         <label class="block text-sm font-medium text-gray-700 mb-1">Slug</label>
-        <input 
-          type="text" 
-          class="w-full p-2 border border-gray-300 rounded text-sm" 
-          [ngModel]="frontmatter().slug" 
+        <input
+          type="text"
+          class="w-full p-2 border border-gray-300 rounded text-sm"
+          [ngModel]="frontmatter().slug"
           (ngModelChange)="updateFrontmatterField('slug', $event)"
           placeholder="/jeugdvoetbal"
         />
       </div>
     </div>
-    
+
     <div class="mt-4">
       <label class="block text-sm font-medium text-gray-700 mb-1">Afbeelding</label>
-      <input 
-        type="text" 
-        class="w-full p-2 border border-gray-300 rounded text-sm" 
-        [ngModel]="frontmatter().image" 
-        (ngModelChange)="updateFrontmatterField('image', $event)"
-        placeholder="/assets/images/example.png"
-      />
+      <div class="flex gap-2">
+        <input
+          type="text"
+          class="flex-1 p-2 border border-gray-300 rounded text-sm"
+          [ngModel]="frontmatter().image"
+          (ngModelChange)="updateFrontmatterField('image', $event)"
+          placeholder="/assets/images/example.png"
+        />
+        <input
+          #imageFileInput
+          type="file"
+          accept="image/*"
+          class="hidden"
+          (change)="uploadFrontmatterImage($event)"
+        />
+        <button
+          type="button"
+          class="bg-blue-500 text-white px-3 py-1 rounded text-sm"
+          (click)="imageFileInput.click()"
+        >
+          Upload
+        </button>
+      </div>
     </div>
-    
+
     <div class="mt-4">
       <label class="block text-sm font-medium text-gray-700 mb-1">Excerpt</label>
-      <textarea 
-        class="w-full p-2 border border-gray-300 rounded text-sm" 
+      <textarea
+        class="w-full p-2 border border-gray-300 rounded text-sm"
         rows="2"
-        [ngModel]="frontmatter().excerpt" 
+        [ngModel]="frontmatter().excerpt"
         (ngModelChange)="updateFrontmatterField('excerpt', $event)"
       ></textarea>
     </div>
-    
+
     <div class="mt-4">
       <label class="block text-sm font-medium text-gray-700 mb-1">Tags</label>
       <div class="space-y-2">
         @for (tag of frontmatter().tags; track $index) {
           <div class="flex items-center gap-2">
-            <input 
-              type="text" 
-              class="flex-1 p-2 border border-gray-300 rounded text-sm" 
-              [ngModel]="tag" 
+            <input
+              type="text"
+              class="flex-1 p-2 border border-gray-300 rounded text-sm"
+              [ngModel]="tag"
               (ngModelChange)="updateTag($index, $event)"
             />
-            <button 
+            <button
               class="bg-red-500 text-white px-2 py-1 rounded text-sm"
               (click)="removeTag($index)"
             >
@@ -106,7 +122,7 @@
             </button>
           </div>
         }
-        <button 
+        <button
           class="bg-green-500 text-white px-3 py-1 rounded text-sm"
           (click)="addTag()"
         >
@@ -114,13 +130,13 @@
         </button>
       </div>
     </div>
-    
+
     <div class="mt-4">
       <label class="block text-sm font-medium text-gray-700 mb-1">Secties</label>
-      <input 
-        type="text" 
-        class="w-full p-2 border border-gray-300 rounded text-sm" 
-        [ngModel]="frontmatter().sections" 
+      <input
+        type="text"
+        class="w-full p-2 border border-gray-300 rounded text-sm"
+        [ngModel]="frontmatter().sections"
         (ngModelChange)="updateFrontmatterField('sections', $event)"
       />
     </div>

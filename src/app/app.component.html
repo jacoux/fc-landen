@@ -134,7 +134,9 @@
         <p>&copy; 2025 FC Landen. Alle rechten voorbehouden.</p>
         Gemaakt door <a href="https://jacouxit.be" class="text-red-400 hover:text-red-600 transition">Jacoux IT</a>.
       </div>
-      <a [routerLink]="[]" [queryParams]="{editor: 'true'}" class="mt-4 text-gray-400 hover:text-red-400 transition">
-        Bewerk deze pagina </a>
+      @if (authService.currentUser()) {
+        <a [routerLink]="[]" [queryParams]="{editor: 'true'}" class="mt-4 text-gray-400 hover:text-red-400 transition">
+          Bewerk deze pagina </a>
+      }
     </div>
   </footer>

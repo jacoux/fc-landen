@@ -153,7 +153,7 @@
     {
       "id": "ongevallen",
       "label": "Ongevallen",
-      "route": "/blog/ongevallen",
+      "route": "/blog/algemeen/ongevallen",
       "subitems": []
     },
     {
@@ -172,6 +172,12 @@
       "id": "medewerker-worden",
       "label": "Word medewerker",
       "route": "/blog/algemeen/medewerker-worden",
+      "subitems": []
+    },
+    {
+      "id": "evenementen",
+      "label": "Evenementen",
+      "route": "/#evenementen",
       "subitems": []
     }
   ]

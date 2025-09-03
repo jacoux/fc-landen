@@ -4,10 +4,10 @@
       <h2 class="mb-6 text-center text-xl font-bold md:mb-1"> {{ title() }} </h2>
       <p class="text-sm text-gray-600 max-w-2xl mx-auto">{{ description() }}</p>
     </div>
-    <div class="grid md:grid-cols-4 gap-8">
+    <div class="grid xs-grid-cols-1 sm:align-middle sm:justify-center sm:grid-cols-2 lg:grid-cols-4 gap-8">
       @for (article of recentArticles(); track $index) {
 
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-900">
+      <div class="max-w-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-900">
         <a [href]="article.slug">
           <img class="rounded-t-lg" [src]="article.image" [alt]="article.title" class="w-full" />
         </a>

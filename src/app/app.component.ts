@@ -2,19 +2,23 @@ import {Component, OnInit, AfterViewInit, inject, PLATFORM_ID, signal} from '@an
 import {RouterLink, RouterOutlet} from '@angular/router';
 import {isPlatformBrowser, CommonModule} from '@angular/common';
 import {MenuService, MenuItem} from './services/menu.service';
+import {AuthService} from './services/auth.service';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, RouterLink, CommonModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [
+    AuthService,
+  ]
 })
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'FC Landen';
   private readonly platformId = inject(PLATFORM_ID);
   menuItems = signal<MenuItem[]>([]);
 
-  constructor(private menuService: MenuService) {}
+  constructor(private menuService: MenuService, public authService: AuthService) {}
 
   ngOnInit(): void {
     this.menuService.menuConfig$.subscribe(config => {

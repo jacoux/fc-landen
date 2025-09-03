@@ -152,7 +152,7 @@
     </div>
   </div>
   <!-- Slider -->
-  <div class="flex min-w-[100vw] gap-6 overflow-hidden sm:gap-7 py-5 md:display-none">
+  <div class="flex min-w-[90vw] gap-6 overflow-hidden sm:gap-7 py-5 md:display-none">
     <img src="assets/images/home1.jpg" alt="" class="h-auto w-36 rounded-2xl sm:w-72 lg:w-80" />
     <img src="assets/images/home2.jpg" alt="" class="h-auto w-36 rounded-2xl sm:w-72 lg:w-80" />
     <img src="assets/images/home3.jpg" alt="" class="h-auto w-36 rounded-2xl sm:w-72 lg:w-80" />
@@ -162,7 +162,7 @@
   </div>
 </header>
 
-<app-article-latest [articlePaths]="homePageData().sections.blogHeader.articlePaths" [title]="homePageData().sections.blogHeader.title" [description]="homePageData().sections.blogHeader.description"></app-article-latest>
+<app-article-latest id="evenementen" [articlePaths]="homePageData().sections.blogHeader.articlePaths" [title]="homePageData().sections.blogHeader.title" [description]="homePageData().sections.blogHeader.description"></app-article-latest>
 <app-features />
 <app-article-latest [articlePaths]="homePageData().sections.events.articlePaths" [title]="homePageData().sections.events.title" [description]="homePageData().sections.events.description"></app-article-latest>
 

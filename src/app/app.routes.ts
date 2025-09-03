@@ -12,10 +12,10 @@ export const routes: Routes = [
 
   // Authentication routes
   {path: 'login', component: LoginComponent, pathMatch: 'full'},
-  {path: 'dashboard', component: DashboardComponent, pathMatch: 'full'},
+  {path: 'dashboard', component: DashboardComponent, pathMatch: 'full', canActivate: [editorAccessGuard]},
 
   // Dynamic blog routes - handles all content
-  {path: 'blog/:category/:postName', component: BlogPostComponent, pathMatch: 'full', canActivate: [editorAccessGuard]},
+  {path: 'blog/:category/:postName', component: BlogPostComponent, pathMatch: 'full'},
   {path: 'blog/nieuw', component: BlogPostComponent, pathMatch: 'full'},
 
   // Catch-all redirect to home

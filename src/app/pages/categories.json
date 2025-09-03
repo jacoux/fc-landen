@@ -26,6 +26,11 @@
       "displayName": "Algemeen"
     },
     {
+      "id": "events",
+      "name": "events",
+      "displayName": "Evenementen"
+    },
+    {
       "id": "Drafts",
       "name": "Drafts",
       "displayName": "Drafts"
