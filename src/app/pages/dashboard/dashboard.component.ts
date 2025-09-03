@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MenuEditorComponent } from '../../components/menu-editor/menu-editor.component';
 import { CommonModule } from '@angular/common';
+import { SponsorsService, SponsorsData } from '../../services/sponsors.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,17 +20,23 @@ import { CommonModule } from '@angular/common';
 
     <!-- Tab Navigation -->
     <div class="tab-navigation">
-      <button 
-        (click)="activeTab.set('blog')" 
+      <button
+        (click)="activeTab.set('blog')"
         [class.active]="activeTab() === 'blog'"
         class="tab-btn">
         Blog Management
       </button>
-      <button 
-        (click)="activeTab.set('menu')" 
+      <button
+        (click)="activeTab.set('menu')"
         [class.active]="activeTab() === 'menu'"
         class="tab-btn">
         Menu Editor
+      </button>
+      <button
+        (click)="activeTab.set('sponsors')"
+        [class.active]="activeTab() === 'sponsors'"
+        class="tab-btn">
+        Sponsors
       </button>
     </div>
 
@@ -80,6 +87,47 @@ import { CommonModule } from '@angular/common';
     <!-- Menu Editor Tab -->
     @if (activeTab() === 'menu') {
       <app-menu-editor></app-menu-editor>
+    }
+
+    <!-- Sponsors Tab -->
+    @if (activeTab() === 'sponsors') {
+      <div class="sponsors-management">
+        <h3>Sponsors Management</h3>
+
+        <div class="upload-logo-section">
+          <h4>Upload a new logo</h4>
+          <div class="flex items-center gap-4 mb-6">
+            <input #logoFileInput type="file" accept="image/*" class="hidden" (change)="onLogoFileSelected($event)" />
+            <button (click)="logoFileInput.click()" class="create-btn">
+              Select Logo File
+            </button>
+            <span *ngIf="selectedLogoFile" class="text-sm text-gray-600">
+              Selected: {{ selectedLogoFile.name }}
+            </span>
+          </div>
+
+          <div class="flex items-center gap-4 mb-6">
+            <input [(ngModel)]="logoUrl" placeholder="Or enter logo URL" class="file-input flex-1" />
+            <button (click)="addLogoUrl()" [disabled]="!logoUrl" class="create-btn">
+              Add Logo URL
+            </button>
+          </div>
+        </div>
+
+        <div class="current-logos">
+          <h4 class="mb-4">Current Logos</h4>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            @for (logo of sponsorsData().logos; track logo) {
+              <div class="logo-item p-4 border rounded-md relative">
+                <img [src]="logo" alt="Sponsor logo" class="w-full h-auto" />
+                <button (click)="removeLogo(logo)" class="absolute top-2 right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center">
+                  ×
+                </button>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
     }
   `,
   styles: [`
@@ -231,17 +279,37 @@ import { CommonModule } from '@angular/common';
 export class DashboardComponent implements OnInit {
   authService = inject(AuthService);
   blogManagement = inject(BlogManagementService);
+  sponsorsService = inject(SponsorsService);
   router = inject(Router);
+
+  // Sponsors data
+  sponsorsData = signal<SponsorsData>({ title: '', logos: [] });
 
   categories = signal<BlogCategory[]>([]);
   categoryConfigs = signal<CategoryConfig[]>([]);
   selectedCategory = '';
   newFileName = '';
-  activeTab = signal<'blog' | 'menu'>('blog');
+  activeTab = signal<'blog' | 'menu' | 'sponsors'>('blog');
+
+  // Sponsors tab variables
+  selectedLogoFile: File | null = null;
+  logoUrl = '';
 
   ngOnInit() {
     this.loadBlogCategories();
     this.loadCategoryConfigs();
+    this.loadSponsorsData();
+  }
+
+  loadSponsorsData() {
+    this.sponsorsService.getSponsors().subscribe({
+      next: (data) => {
+        this.sponsorsData.set(data);
+      },
+      error: (err) => {
+        console.error('Error loading sponsors data:', err);
+      }
+    });
   }
 
   loadBlogCategories() {
@@ -268,36 +336,39 @@ export class DashboardComponent implements OnInit {
 
   createNewFile() {
     if (!this.selectedCategory || !this.newFileName) return;
-
-    this.blogManagement.fileExists(this.selectedCategory, this.newFileName).subscribe({
-      next: (exists) => {
-        if (exists) {
-          alert('File already exists!');
-          return;
-        }
-
         this.blogManagement.createNewFile(this.selectedCategory, this.newFileName).subscribe({
           next: () => {
             alert('File created successfully!');
-            this.newFileName = '';
-            this.selectedCategory = '';
-            this.loadBlogCategories();
+            this.router.navigate(['/blog', this.selectedCategory, this.newFileName]);
           },
           error: (err) => {
             console.error('Error creating file:', err);
             alert('Failed to create file');
           }
         });
-      },
-      error: (err) => {
-        console.error('Error checking file existence:', err);
-      }
-    });
   }
 
   editFile(filePath: string) {
-    // Navigate to article editor with the file path
-    this.router.navigate(['/blog-post'], { queryParams: { path: filePath, edit: true } });
+    // Extract category and filename from the filePath
+    // filePath format is expected to be like "assets/blog/category/filename.md"
+    const parts = filePath.split('/');
+    let category, filename;
+
+    if (parts.length >= 4 && parts[0] === 'assets' && parts[1] === 'blog') {
+      // Handle full path format: assets/blog/category/filename.md
+      category = parts[2];
+      filename = parts[3].replace('.md', '');
+    } else if (parts.length >= 2) {
+      // Handle simplified format: category/filename
+      category = parts[0];
+      filename = parts[1].replace('.md', '');
+    } else {
+      console.error('Invalid file path format:', filePath);
+      return;
+    }
+
+    // Navigate to the blog post with the edit parameter
+    this.router.navigate(['/blog', category, filename], { queryParams: { edit: true } });
   }
 
   deleteFile(filePath: string, fileName: string) {
@@ -322,6 +393,63 @@ export class DashboardComponent implements OnInit {
       },
       error: (err) => {
         alert('Logout failed: ' + (err.message || 'Unknown error'));
+      }
+    });
+  }
+
+  // Sponsors tab methods
+  onLogoFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.selectedLogoFile = input.files[0];
+      this.uploadLogoFile();
+    }
+  }
+
+  uploadLogoFile() {
+    if (!this.selectedLogoFile) return;
+
+    this.sponsorsService.uploadLogo(this.selectedLogoFile).subscribe({
+      next: (logoUrl) => {
+        this.addLogo(logoUrl);
+        this.selectedLogoFile = null;
+      },
+      error: (err) => {
+        console.error('Error uploading logo:', err);
+        alert('Failed to upload logo');
+      }
+    });
+  }
+
+  addLogoUrl() {
+    if (!this.logoUrl) return;
+
+    this.addLogo(this.logoUrl);
+    this.logoUrl = '';
+  }
+
+  addLogo(logoUrl: string) {
+    this.sponsorsService.addLogo(logoUrl).subscribe({
+      next: () => {
+        this.loadSponsorsData(); // Reload the sponsors data
+      },
+      error: (err) => {
+        console.error('Error adding logo:', err);
+        alert('Failed to add logo');
+      }
+    });
+  }
+
+  removeLogo(logoUrl: string) {
+    if (!confirm('Are you sure you want to remove this logo?')) return;
+
+    this.sponsorsService.removeLogo(logoUrl).subscribe({
+      next: () => {
+        this.loadSponsorsData(); // Reload the sponsors data
+      },
+      error: (err) => {
+        console.error('Error removing logo:', err);
+        alert('Failed to remove logo');
       }
     });
   }

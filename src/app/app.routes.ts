@@ -13,7 +13,7 @@ export const routes: Routes = [
 
   // Authentication routes
   {path: 'login', component: LoginComponent, pathMatch: 'full'},
-  {path: 'dashboard', component: DashboardComponent, pathMatch: 'full', canActivate: [authGuard]},
+  {path: 'dashboard', component: DashboardComponent, pathMatch: 'full'},
 
   // Dynamic blog routes - handles all content
   {path: 'blog/:category/:postName', component: BlogPostComponent, pathMatch: 'full'},

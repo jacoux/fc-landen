@@ -23,6 +23,7 @@ import {SliderComponent} from '../../components/slider/slider.component';
 import {SecurityContext} from '@angular/core';
 import {LogosComponent} from '../../components/logos/logos.component';
 import Paragraph from '@editorjs/paragraph';
+import {SponsorsService, SponsorsData} from '../../services/sponsors.service';
 
 
 @Component({
@@ -48,11 +49,21 @@ export class BlogPostComponent implements OnInit {
   content = signal<string>('');
   newContent = signal('');
 
-  constructor(private readonly route: ActivatedRoute, private readonly blogService: BlogService) {
+  // Sponsors data
+  sponsorsData = signal<SponsorsData>({ title: 'Met dank aan onze sponsors', logos: [] });
+
+  constructor(
+    private readonly route: ActivatedRoute,
+    private readonly blogService: BlogService,
+    private readonly sponsorsService: SponsorsService
+  ) {
     this.markdownPath.set('assets/blog/algemeen/fc-landen-kampioen-2a.md');
   }
 
   ngOnInit(): void {
+    // Load sponsors data
+    this.loadSponsorsData();
+
     const category = this.route.snapshot.paramMap.get('category');
     const postName = this.route.snapshot.paramMap.get('postName');
     const isNewPostRoute = this.route.snapshot.url.some(segment => segment.path === 'nieuw');
@@ -90,6 +101,17 @@ export class BlogPostComponent implements OnInit {
   onBlockUpdate($event: string) {
     const strippedCt = stripMetadata($event);
     this.newContent.set(strippedCt);
+  }
+
+  loadSponsorsData() {
+    this.sponsorsService.getSponsors().subscribe({
+      next: (data) => {
+        this.sponsorsData.set(data);
+      },
+      error: (err) => {
+        console.error('Error loading sponsors data:', err);
+      }
+    });
   }
 
 }

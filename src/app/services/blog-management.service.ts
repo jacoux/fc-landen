@@ -177,11 +177,4 @@ export class BlogManagementService {
   deleteFile(filePath: string): Observable<any> {
     return this.githubSave.deleteFile(filePath);
   }
-
-  fileExists(category: string, fileName: string): Observable<boolean> {
-    return this.http.get(`assets/blog/${category}/${fileName}.md`, { responseType: 'text' }).pipe(
-      map(() => true),
-      catchError(() => of(false))
-    );
-  }
 }

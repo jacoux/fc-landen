@@ -8,6 +8,7 @@ import {HomePageData} from '../../types/HomePageData.types';
 import { ArticleLatestComponent } from '../../components/article-latest/article-latest.component';
 import {FeaturesComponent} from '../../components/features/features.component';
 import {LogosComponent} from '../../components/logos/logos.component';
+import {SponsorsService, SponsorsData} from '../../services/sponsors.service';
 
 @Component({
   selector: 'app-home',
@@ -23,6 +24,10 @@ export class HomeComponent implements OnInit {
   jsonSha: string | null = null;
   readonly #http = inject(HttpClient);
   readonly #githubSave = inject(SaveToGithubService);
+  readonly #sponsorsService = inject(SponsorsService);
+
+  // Sponsors data
+  sponsorsData = signal<SponsorsData>({ title: 'Met dank aan onze sponsors', logos: [] });
   protected homePageData = signal<HomePageData>({
     sections: {
       header: {
@@ -74,6 +79,18 @@ export class HomeComponent implements OnInit {
   });
   ngOnInit() {
     this.loadPageData();
+    this.loadSponsorsData();
+  }
+
+  loadSponsorsData() {
+    this.#sponsorsService.getSponsors().subscribe({
+      next: (data) => {
+        this.sponsorsData.set(data);
+      },
+      error: (err) => {
+        console.error('Error loading sponsors data:', err);
+      }
+    });
   }
 
   saveToGithub() {
@@ -99,4 +116,3 @@ export class HomeComponent implements OnInit {
     });
  }
  }
-
