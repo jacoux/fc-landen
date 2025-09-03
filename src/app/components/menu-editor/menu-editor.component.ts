@@ -108,17 +108,17 @@ export interface MenuConfig {
         <button
           (click)="saveMenu()"
           class="px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold">
-          Save Menu
+          Opslaan
         </button>
         <button
           (click)="loadMenu()"
           class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold">
-          Reload Menu
+          Herlaad Menu
         </button>
         <button
           (click)="addMainItem()"
           class="px-6 py-2 bg-blue-600 text-white rounded-lg  font-semibold">
-          Add Main Item
+          Voeg een hoofdmenu toe
         </button>
       </div>
     </div>
