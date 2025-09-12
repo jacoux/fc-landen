@@ -28,9 +28,3 @@ excerpt: Hieronder vind je de volledige gegevens van onze club. Handig voor bijv
 * Telefoon:&nbsp;011 88 31 11
 
 ---
-
----
-
----
-
----
