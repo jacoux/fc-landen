@@ -309,9 +309,10 @@ export class ArticleEditorComponent implements OnInit {
     this.#githubSave.saveFile(path, mdx, null ).subscribe({
       next: () => {
         console.log('✅ File saved');
+        this.close();
         this.#deployNotification.startDeployCountdown();
       },
-      error: (err) => console.error('❌ Save failed', err),
+      error: (err) => alert('❌ Er ging iets mis bij het opslaan: ' + err.message),
     });
   }
 }

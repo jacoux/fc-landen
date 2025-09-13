@@ -49,7 +49,6 @@ export class BlogPostComponent implements OnInit {
   content = signal<string>('');
   newContent = signal('');
 
-  // Sponsors data
   sponsorsData = signal<SponsorsData>({ title: 'Met dank aan onze sponsors', logos: [] });
 
   constructor(
