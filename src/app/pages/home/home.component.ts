@@ -9,6 +9,7 @@ import { ArticleLatestComponent } from '../../components/article-latest/article-
 import {FeaturesComponent} from '../../components/features/features.component';
 import {LogosComponent} from '../../components/logos/logos.component';
 import {SponsorsService, SponsorsData} from '../../services/sponsors.service';
+import {DeployNotificationService} from '../../services/deploy-notification.service';
 
 @Component({
   selector: 'app-home',
@@ -25,6 +26,7 @@ export class HomeComponent implements OnInit {
   readonly #http = inject(HttpClient);
   readonly #githubSave = inject(SaveToGithubService);
   readonly #sponsorsService = inject(SponsorsService);
+  readonly #deployNotification = inject(DeployNotificationService);
 
   // Sponsors data
   sponsorsData = signal<SponsorsData>({ title: 'Met dank aan onze sponsors', logos: [] });
@@ -96,7 +98,10 @@ export class HomeComponent implements OnInit {
   saveToGithub() {
     const content = JSON.stringify(this.homePageData(), null, 2); // pretty json
     this.#githubSave.saveFile(this.dataFile, content, this.jsonSha).subscribe({
-      next: () => console.log('✅ File saved'),
+      next: () => {
+        console.log('✅ File saved');
+        this.#deployNotification.startDeployCountdown();
+      },
       error: (err) => console.error('❌ Save failed', err),
     });
   }

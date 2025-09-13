@@ -3,6 +3,7 @@ import {RouterLink, RouterOutlet} from '@angular/router';
 import {isPlatformBrowser, CommonModule} from '@angular/common';
 import {MenuService, MenuItem} from './services/menu.service';
 import {AuthService} from './services/auth.service';
+import {DeployNotificationService} from './services/deploy-notification.service';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   title = 'FC Landen';
   private readonly platformId = inject(PLATFORM_ID);
   menuItems = signal<MenuItem[]>([]);
+  public deployNotification = inject(DeployNotificationService);
 
   constructor(private menuService: MenuService, public authService: AuthService) {}
 

@@ -1,7 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, catchError, map, of, switchMap } from 'rxjs';
+import { Observable, catchError, map, of, switchMap, tap } from 'rxjs';
 import { SaveToGithubService } from './saveToGithub';
+import { DeployNotificationService } from './deploy-notification.service';
 
 export interface SponsorsData {
   title: string;
@@ -14,6 +15,7 @@ export interface SponsorsData {
 export class SponsorsService {
   private readonly http = inject(HttpClient);
   private readonly githubSave = inject(SaveToGithubService);
+  private readonly deployNotification = inject(DeployNotificationService);
   private readonly sponsorsFile = 'assets/sponsors.json';
 
   /**
@@ -38,10 +40,11 @@ export class SponsorsService {
   saveSponsors(data: SponsorsData): Observable<any> {
     const content = JSON.stringify(data, null, 2); // pretty json
     return this.githubSave.saveFile(this.sponsorsFile, content, null).pipe(
-      map(() => {
+      tap(() => {
         console.log('✅ Sponsors data saved');
-        return true;
+        this.deployNotification.startDeployCountdown();
       }),
+      map(() => true),
       catchError(error => {
         console.error('❌ Failed to save sponsors data', error);
         throw error;

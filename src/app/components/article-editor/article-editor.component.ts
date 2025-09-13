@@ -5,6 +5,7 @@ import {SaveToGithubService} from '../../services/saveToGithub';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {Router} from '@angular/router';
 import {SliderTool} from './slider-tool';
+import {DeployNotificationService} from '../../services/deploy-notification.service';
 
 @Component({
   selector: 'app-article-editor',
@@ -37,6 +38,7 @@ export class ArticleEditorComponent implements OnInit {
 
   readonly #githubSave = inject(SaveToGithubService);
   readonly #router = inject(Router);
+  readonly #deployNotification = inject(DeployNotificationService);
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
@@ -305,10 +307,11 @@ export class ArticleEditorComponent implements OnInit {
     const path = this.newPath() || this.articlePath();
 
     this.#githubSave.saveFile(path, mdx, null ).subscribe({
-      next: () => console.log('✅ File saved'),
+      next: () => {
+        console.log('✅ File saved');
+        this.#deployNotification.startDeployCountdown();
+      },
       error: (err) => console.error('❌ Save failed', err),
     });
-    alert('Opgeslagen');
-
   }
 }

@@ -1,7 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, catchError, of, forkJoin, switchMap } from 'rxjs';
+import { Observable, map, catchError, of, forkJoin, switchMap, tap } from 'rxjs';
 import { SaveToGithubService } from './saveToGithub';
+import { DeployNotificationService } from './deploy-notification.service';
 
 export interface BlogFile {
   name: string;
@@ -27,6 +28,7 @@ export interface CategoryConfig {
 export class BlogManagementService {
   private readonly http = inject(HttpClient);
   private readonly githubSave = inject(SaveToGithubService);
+  private readonly deployNotification = inject(DeployNotificationService);
 
 
   getBlogCategories(): Observable<BlogCategory[]> {
@@ -171,10 +173,14 @@ export class BlogManagementService {
         `;
 
     const path = `assets/blog/${category}/${fileName}.md`;
-    return this.githubSave.saveFile(path, template, null);
+    return this.githubSave.saveFile(path, template, null).pipe(
+      tap(() => this.deployNotification.startDeployCountdown())
+    );
   }
 
   deleteFile(filePath: string): Observable<any> {
-    return this.githubSave.deleteFile(filePath);
+    return this.githubSave.deleteFile(filePath).pipe(
+      tap(() => this.deployNotification.startDeployCountdown())
+    );
   }
 }
