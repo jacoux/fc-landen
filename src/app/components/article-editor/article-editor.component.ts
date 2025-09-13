@@ -285,6 +285,7 @@ export class ArticleEditorComponent implements OnInit {
     this.#router.navigate([], {
       queryParams: { editor: null }
     });
+    this.loadMdxFile(this.articlePath());
   }
 
   uploadFrontmatterImage(event: Event) {
