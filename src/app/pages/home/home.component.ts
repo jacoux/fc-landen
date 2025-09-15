@@ -15,7 +15,7 @@ import {DeployNotificationService} from '../../services/deploy-notification.serv
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  styleUrl: './home.component.scss',
   imports: [SidebarEditorComponent, EditorDirective, ArticleLatestComponent, FeaturesComponent, LogosComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

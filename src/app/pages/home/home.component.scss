@@ -1,0 +1,46 @@
+:host {
+  display: block;
+}
+.bubble {
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.6;
+  transition: transform 3s ease-in-out;
+}
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+}
+.content-section {
+  position: relative;
+  z-index: 10;
+}
+
+#latestHomeGames {
+  position: relative;
+}
+
+#latestHomeGames::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* Adjust based on header height */
+  background: white; /* Match your page background */
+  z-index: 10;
+  pointer-events: none;
+}
+
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  height: 400px; /* 700px - 60px header */
+
+  iframe {
+    position: relative;
+    top: -260px;
+    height: 100%; /* Compensate for the offset */
+  }
+}
