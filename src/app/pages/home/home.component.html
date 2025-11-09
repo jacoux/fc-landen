@@ -27,14 +27,21 @@
     <img src="assets/images/home6.jpg" alt="" class="h-auto w-36 rounded-2xl sm:w-72 lg:w-80" />
   </div>
 </header>
-
-<div class="iframe-container">
-  <iframe id="latestHomeGames" src="https://fclanden.prosoccerdata.com/api/v2/narrowcasting/pages/html/02cc63c1-a203-4a16-9766-60974d60b5d0" height="200px" width="100%"></iframe>
-</div>
-
-<app-article-latest id="evenementen" [articlePaths]="homePageData().sections.blogHeader.articlePaths" [title]="homePageData().sections.blogHeader.title" [description]="homePageData().sections.blogHeader.description"></app-article-latest>
-<app-features />
 <app-article-latest [articlePaths]="homePageData().sections.events.articlePaths" [title]="homePageData().sections.events.title" [description]="homePageData().sections.events.description"></app-article-latest>
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="mb-6 text-center text-xl font-bold md:mb-1"> Wedstrijdinfo</h2>
+      <p class="text-sm text-gray-600 max-w-2xl mx-auto">Hier kan je de gegevens vinden van onze aankomende wedstrijden.</p>
+      <div class="iframe-container">
+        <iframe id="latestHomeGames" src="https://fclanden.prosoccerdata.com/api/v2/narrowcasting/pages/html/02cc63c1-a203-4a16-9766-60974d60b5d0" height="200px" width="100%"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<app-article-latest id="evenementen" [articlePaths]="homePageData().sections.blogHeader.articlePaths" [title]="homePageData().sections.blogHeader.title" [description]="homePageData().sections.blogHeader.description"></app-article-latest>
+
+<app-features [title]="homePageData().sections.features.title" [description]="homePageData().sections.features.description" [featureItems]="homePageData().sections.features.featureItems" />
 
 <section>
   <!-- Container -->

@@ -6,6 +6,17 @@ export interface CardData {
   linkTitle: string;
 }
 
+export interface FeatureItem {
+  title: string;
+  description: string;
+}
+
+export interface FeaturesSection {
+  title: string;
+  description: string;
+  featureItems: FeatureItem[];
+}
+
 export interface NewsletterSection {
   title: string;
   description: string;
@@ -26,6 +37,7 @@ export interface HomePageData {
       description: string;
       card: CardData[];
     };
+    features: FeaturesSection;
     blogHeader: {
       title: string;
       description: string;

@@ -46,6 +46,16 @@ export class SidebarEditorComponent implements OnInit {
           },
         ]
       },
+      features: {
+        title: '',
+        description: '',
+        featureItems: [
+          {
+            title: '',
+            description: '',
+          }
+          ]
+      },
       blogHeader: {
         title: '',
         description: '',
@@ -95,6 +105,19 @@ export class SidebarEditorComponent implements OnInit {
           title: this.block()?.sections.blogHeader.title ?? '',
           description: this.block()?.sections.blogHeader.description ?? '',
           articlePaths: this.block()?.sections.blogHeader.articlePaths ?? []
+        },
+        features: {
+          title: this.block()?.sections.features.title ?? '',
+          description: this.block()?.sections.features.description ?? '',
+          featureItems: this.block()?.sections.features.featureItems?.map(card => ({
+            title: card.title ?? '',
+            description: card.description ?? '',
+          })) ?? [
+            { title: '', description: ''},
+            { title: '', description: ''},
+            { title: '', description: ''},
+            { title: '', description: ''}
+          ]
         },
         events: {
           title: this.block()?.sections.events.title ?? '',

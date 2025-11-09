@@ -61,6 +61,28 @@ export class HomeComponent implements OnInit {
           },
         ]
       },
+      features: {
+        title: '',
+        description: '',
+        featureItems: [
+          {
+            title: '',
+            description: '',
+          },
+          {
+            title: '',
+            description: '',
+          },
+          {
+            title: '',
+            description: '',
+          },
+          {
+            title: '',
+            description: '',
+          }
+        ]
+      },
       blogHeader: {
         title: '',
         description: '',

@@ -38,6 +38,29 @@
         "assets/blog/algemeen/fc-landen-kampioen-2a.md"
       ]
     },
+    "features": {
+
+  "title": "Voetbal met visie en verbondenheid",
+  "description": "FC Landen beschouwt voetbal als meer dan enkel een sport, het is een manier om talent te ontwikkelen, waarden over te dragen en de gemeenschap te verbinden. De club legt de nadruk op opleiding, plezier en groei, zowel sportief als persoonlijk, met oog voor elk individu dat deel uitmaakt van de werking.",
+  "featureItems": [
+    {
+      "title": "Opleidingsclub met doorgroeikansen",
+      "description": "FC Landen wil een opleidingsclub zijn waar het eerste elftal het resultaat is van een sterke jeugdwerking. De nadruk ligt op doorstroming, zoveel mogelijk spelers uit de eigen jeugd maken de stap naar het eerste elftal."
+    },
+    {
+      "title": "Breed voetbalaanbod en plezier voorop",
+      "description": "De club biedt ploegen aan op verschillende competitieniveaus, zowel interprovinciaal als gewestelijk. Daarbij worden zowel ambitieuze talenten als recreatieve spelers aangesproken, met altijd aandacht voor het fun aspect."
+    },
+    {
+      "title": "Modern en herkenbaar voetbal",
+      "description": "FC Landen streeft naar een moderne speelstijl met flexibele spelsystemen die toch herkenbaar blijven voor spelers. De focus ligt op het opleiden van technisch vaardige, tactisch slimme spelers met een sterke mindset."
+    },
+    {
+      "title": "Waarden en verbondenheid als fundament",
+      "description": "Naast sportieve groei hecht de club veel belang aan persoonlijke ontwikkeling, teamwork, respect en weerbaarheid. Via clubevents en samenwerking met lokale partners versterkt FC Landen bovendien de sociale samenhang binnen en buiten de club."
+    }
+  ]
+},
     "events": {
       "title": "Onze evenementen",
       "description": "Onze aankomende evenementen",
