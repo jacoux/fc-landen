@@ -64,7 +64,8 @@
       "title": "Onze evenementen",
       "description": "Onze aankomende evenementen",
       "articlePaths": [
-        "assets/blog/events/event1.md"
+        "assets/blog/events/mosseldag.md",
+        "assets/blog/events/open-training-2026.md"
       ]
     },
     "newsletter": {
