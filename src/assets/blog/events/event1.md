@@ -1,19 +1,16 @@
 ---
-title: Evenement 1
+title: Open trainigsdag
 author: FC Landen
-date: 27-08-2025
-image: https://plus.unsplash.com/premium_photo-1728412897304-25193f0bedf1?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-slug: /blog/events/event1
+date: 14-01-2026
+image: 
+slug: /blog/events/open-training-2026
 excerpt: Evenement
 tags:
-- ongevallen
-- verzekering
-- sportongeval
-- procedures
+- Open trainingsdag
 ---
-# Eventnaam 1
 
-**Evenement 1**
-Dit is een beschrijving van evenement 1.
+# Open trainingsdag
 
 ---
+
+![Image](https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/i57439590f5358855ad0855e5f1159410.png)
