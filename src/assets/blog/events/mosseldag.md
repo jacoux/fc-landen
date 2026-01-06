@@ -3,8 +3,8 @@ title: Mosseldag 7/02 & 08/03
 author: FC Landen
 date: 7 februari
 image: https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/i045f51c306664f2330f4f83b5eb6e4f8.png
-slug: /events
-excerpt: 
+slug: /blog/events/mosseldag
+excerpt: mosseldag
 ---
 
 Jaarlijkse mosseldagen komen er weer aan. <br>Dit jaar kan je lekkere mosseltjes eten op 
