@@ -1,7 +1,7 @@
 ---
 title: Webshop
 author: FC Landen
-date: 
+date: 2026-01-10
 image: 
 slug: /webshop
 excerpt: Bekijk onze webshop
