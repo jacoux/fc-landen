@@ -3,6 +3,7 @@ import {BlogPostComponent} from './pages/blog-post/blog-post.component';
 import {HomeComponent} from './pages/home/home.component';
 import {editorAccessGuard} from './services/aditorGuard';
 import {authGuard} from './services/authGuard';
+import {publicGuard} from './services/publicGuard';
 import {LoginComponent} from './pages/login/login.component';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
 
@@ -12,8 +13,8 @@ export const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
 
   // Authentication routes
-  {path: 'login', component: LoginComponent, pathMatch: 'full'},
-  {path: 'dashboard', component: DashboardComponent, pathMatch: 'full'},
+  {path: 'login', component: LoginComponent, canActivate: [publicGuard], pathMatch: 'full'},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [authGuard], pathMatch: 'full'},
 
   // Dynamic blog routes - handles all content
   {path: 'blog/:category/:postName', component: BlogPostComponent, pathMatch: 'full'},
