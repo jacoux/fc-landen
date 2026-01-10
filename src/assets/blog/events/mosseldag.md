@@ -1,5 +1,5 @@
 ---
-title: Mosseldag 7/02 & 08/03
+title: Mosseldag 7/02 & 08/02
 author: FC Landen
 date: 7 februari
 image: https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/mosseldag.png
