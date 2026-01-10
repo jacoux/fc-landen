@@ -4,7 +4,7 @@ author: FC Landen
 date: 7 februari
 image: https://raw.githubusercontent.com/jacoux/fc-landen/main/src/assets/images/mosseldag.png
 slug: /blog/events/mosseldag
-excerpt: mosseldag
+excerpt: Evenement
 ---
 
 🍽️ Mosseldagen FC Landen ⚽
