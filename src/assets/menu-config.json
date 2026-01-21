@@ -109,6 +109,12 @@
       "route": "/blog/ledeninfo/ledeninfo",
       "subitems": [
         {
+          "id": "new-sub-1769020151548",
+          "label": "Ongevallen",
+          "route": "/blog/algemeen/ongevallen",
+          "subitems": []
+        },
+        {
           "id": "attesten-mutualiteit",
           "label": "Attesten Mutualiteit",
           "route": "/blog/ledeninfo/attesten-mutualiteit"
@@ -149,12 +155,6 @@
           "route": "/blog/algemeen/club-api"
         }
       ]
-    },
-    {
-      "id": "ongevallen",
-      "label": "Ongevallen",
-      "route": "/blog/algemeen/ongevallen",
-      "subitems": []
     },
     {
       "id": "techniek",
