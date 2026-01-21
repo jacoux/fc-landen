@@ -179,6 +179,12 @@
       "label": "Evenementen",
       "route": "/#evenementen",
       "subitems": []
+    },
+    {
+      "id": "webshop",
+      "label": "Webshop",
+      "route": "https://fclanden.shop4clubs.eu/",
+      "subitems": []
     }
   ]
 }
