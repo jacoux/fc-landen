@@ -2,9 +2,9 @@
 title: Techniek Training - FC Landen
 author: FC Landen
 date: 2025-01-15
-image: /assets/images/techniek-training.jpg
-slug: /techniek
-excerpt: Verbeter je voetbaltechniek met onze trainingsvideos. Van basis balcontrole tot geavanceerde technieken.
+image: /assets/images/techniek-header.png
+slug: /blog/algemeen/techniek
+excerpt: Verbeter je voetbaltechniek met onze nieuwe trainingsvideos. Van basis balcontrole tot geavanceerde technieken.
 tags:
 - techniek
 - training
@@ -12,114 +12,110 @@ tags:
 - voetbal
 ---
 
-# TECHNIEK - FC Landen
+### Schaar
 
-Hieronder vinden jullie deze techniekbewegingen overeenkomstig het opleidingsplan van FC Landen. Aan de slag!
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/1. Schaar.mp4" type="video/mp4">
+</video>
 
-*Spelers die hun techniek verder willen oefenen, kunnen aan de slag met de filmpjes. Veel plezier!*
+### Contra binnen buiten
 
-## Basis Balcontrole
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/2. Contra binnen buiten.mp4" type="video/mp4">
+</video>
 
-### Eerste Balcontact
+### Sleep
 
-Leer de juiste techniek voor het controleren van de bal in verschillende situaties.
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/3. Sleep.mp4" type="video/mp4">
+</video>
 
-[![Basis Balcontrole](https://img.youtube.com/vi/yebKof3GhCA/0.jpg)](https://www.youtube.com/watch?v=yebKof3GhCA)
+### Okocha
 
-### Bal Aannemen en Doorspelen
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/4. Okocha.mp4" type="video/mp4">
+</video>
 
-Efficiënte technieken voor het aannemen en direct doorspelen van de bal.
+### Kap achter steunbeen
 
-[![Bal Aannemen](https://img.youtube.com/vi/KpnZLKUwZJ8/0.jpg)](https://www.youtube.com/watch?v=KpnZLKUwZJ8)
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/5. Kap achter steunbeen.mp4" type="video/mp4">
+</video>
 
----
+### Akka
 
-## Dribbeltechnieken
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/6. Akka.mp4" type="video/mp4">
+</video>
 
-### Basis Dribbelen
+### Wegvegen
 
-Fundamentele dribbeltechnieken voor jonge voetballers.
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/7. Wegvegen.mp4" type="video/mp4">
+</video>
 
-[![Basis Dribbelen](https://img.youtube.com/vi/8E4dZYwmk7o/0.jpg)](https://www.youtube.com/watch?v=8E4dZYwmk7o)
+### Zidane
 
-### 1 tegen 1 Situaties
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/8. Zidane.mp4" type="video/mp4">
+</video>
 
-Technieken voor het uitspelen van tegenstanders in duel situaties.
+### Overstap + Kap
 
-[![1vs1 Technieken](https://img.youtube.com/vi/mfGdN4RmVHM/0.jpg)](https://www.youtube.com/watch?v=mfGdN4RmVHM)
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/9. Overstap + Kap.mp4" type="video/mp4">
+</video>
 
----
+### Terugkap achter steunbeen
 
-## Schiet Technieken
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/10. Terugkap achter steunbeen.mp4" type="video/mp4">
+</video>
 
-### Basis Schiettechniek
+### Kap buitenkant voet
 
-De juiste houding en techniek voor effectief schieten op doel.
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/11. Kap buitenkant voet.mp4" type="video/mp4">
+</video>
 
-[![Schiettechniek](https://img.youtube.com/vi/Ay8bkTaUsjg/0.jpg)](https://www.youtube.com/watch?v=Ay8bkTaUsjg)
+### Afrol met kap
 
-### Afwerking in de 16
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/12. Afrol met kap.mp4" type="video/mp4">
+</video>
 
-Specifieke technieken voor het afwerken van kansen in het strafschopgebied.
+### 360 Graden
 
-[![Afwerking](https://img.youtube.com/vi/q7f1c-XRQgM/0.jpg)](https://www.youtube.com/watch?v=q7f1c-XRQgM)
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/13. 360 Graden.mp4" type="video/mp4">
+</video>
 
----
+### Uitvalpas
 
-## Passtechnieken
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/14. Uitvalpas.mp4" type="video/mp4">
+</video>
 
-### Korte Pass
+### Trek achter steunbeen
 
-Nauwkeurige korte passes voor balcirculatie.
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/15. Trek achter steunbeen.mp4" type="video/mp4">
+</video>
 
-[![Korte Pass](https://img.youtube.com/vi/5dZXQiAuXJc/0.jpg)](https://www.youtube.com/watch?v=5dZXQiAuXJc)
+### Dubbele schaar
 
-### Lange Pass
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/16. Dubbele schaar.mp4" type="video/mp4">
+</video>
 
-Technieken voor nauwkeurige lange passes over grotere afstanden.
+### Dubbele overstap
 
-[![Lange Pass](https://img.youtube.com/vi/WF3W0nIwFnw/0.jpg)](https://www.youtube.com/watch?v=WF3W0nIwFnw)
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/17. Dubbele overstap.mp4" type="video/mp4">
+</video>
 
----
+### De Davinia
 
-## Koppen
-
-### Basis Koptechniek
-
-Veilige en effectieve technieken voor het koppen van de bal.
-
-[![Koptechniek](https://img.youtube.com/vi/4ZWWOEqTCWE/0.jpg)](https://www.youtube.com/watch?v=4ZWWOEqTCWE)
-
----
-
-## Keeperstechnieken
-
-### Basis Keeperstechnieken
-
-Fundamentele technieken voor jonge doelmannen.
-
-[![Keeperstechnieken](https://img.youtube.com/vi/RKZyKKPzkHs/0.jpg)](https://www.youtube.com/watch?v=RKZyKKPzkHs)
-
----
-
-## Training Tips
-
-- **Regelmatig oefenen**: Consistentie is belangrijker dan intensiteit
-
-- **Beide voeten**: Train altijd met je zwakkere voet
-
-- **Kwaliteit boven kwantiteit**: Focus op juiste uitvoering
-
-- **Geduld hebben**: Techniek ontwikkeling kost tijd
-
-- **Plezier behouden**: Geniet van het leerproces!
-
-## Contacteer je trainer
-
-Heb je vragen over de technieken? Contacteer je trainer of kom naar een van onze trainingen!
-
-**Sportcomplex FC Landen**
-
-Sportlaan 30
-
-3400 Landen
+<video controls playsinline preload="metadata" width="100%">
+  <source src="/assets/videos/18. De Davinia.mp4" type="video/mp4">
+</video>

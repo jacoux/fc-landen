@@ -33,6 +33,7 @@
       "title": "Laatste Nieuws",
       "description": "Blijf op de hoogte van het laatste nieuws van FC Landen.",
       "articlePaths": [
+        "assets/blog/algemeen/techniek.md",
         "assets/blog/algemeen/sponsordag-2025.md",
         "assets/blog/jeugdvoetbal/ploegvoorstelling-jeugd-2024-2025.md",
         "assets/blog/algemeen/fc-landen-kampioen-2a.md"
